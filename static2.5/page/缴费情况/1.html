@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+</head>
+
+<body>
+    <a onclick="member_stop(this,'10001')" href="javascript:;" title="启用"
+    class="layui-btn layui-btn-normal layui-btn-sm">
+    <e>续费</e>
+  </a>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary data-delete-btn">重置</button>
+        </div>
+    </div>
+
+    <script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+    <script>
+        layui.use('layer', 'table', 'from', function () {
+            var $ = layui.jquery,
+                layer = layui.layer,
+                table = layui.table,
+                from = layui.from;
+
+
+        });
+
+    function member_stop(obj, id) {
+      layer.confirm('确认续费么', function (index) {
+        layer.msg('删除成功', { icon: 1 });
+
+      });
+    }
+    </script>
+
+</body>
+
+</html>

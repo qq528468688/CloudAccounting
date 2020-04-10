@@ -1,0 +1,62 @@
+{
+    "code": 0,
+    "msg": "",
+    "count": 100,
+    "data": [
+      {
+        "id":1,
+        "userid": "盛源行",
+        "type": "正常",
+        "types": "已缴费",
+        "time":"企业",
+        "wealth": "云计算",
+        "wealths":" 2019-1-20"
+      
+      },
+      {
+        "id":2,
+        "userid": "盛源行",
+        "type": "正常",
+        "types": "已缴费",
+        "time":"企业",
+        "wealth": "云计算",
+        "wealths":" 2019-1-20"
+     
+      },
+      
+      {
+        "id":3,
+        "userid": "盛源行",
+        "type": "正常",
+        "types": "已缴费",
+        "time":"企业",
+        "wealth": "云计算",
+        "wealths":" 2019-1-20"
+    
+      },
+      {
+        "id":4,
+        "userid": "盛源行",
+        "type": "正常",
+        "types": "已缴费",
+        "time":"企业",
+        "wealth": "云计算",
+        "wealths":" 2019-1-20"
+     
+      },
+      {
+        "id":5,
+        "userid": "盛源行",
+        "type": "正常",
+        "types": "已缴费",
+        "time":"企业",
+        "wealth": "云计算",
+        "wealths": " 2019-1-20" 
+      
+      }
+       
+  
+          
+      
+    ]
+  }

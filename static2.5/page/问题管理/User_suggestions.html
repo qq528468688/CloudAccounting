@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>layuiAdmin 工单系统</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../css/public.css" media="all">
+</head>
+
+<body>
+  <div class="layuimini-container">
+    <div class="layuimini-main">
+
+        <fieldset class="table-search-fieldset">
+            <legend>搜索信息</legend>
+            <div style="margin: 10px 10px 10px 10px">
+                <form class="layui-form layui-form-pane" action="">
+                    <div class="layui-form-item">
+
+                        <div class="layui-inline">
+                            <label class="layui-form-label">处理人员</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="Processing_personnel" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                          <label class="layui-form-label">处理时间</label>
+                          <div class="layui-input-inline">
+                            <input type="text" name="time1" class="layui-input" id="test1" placeholder="yyyy-MM-dd">
+                          </div>
+                        </div>
+                      <div class="layui-inline">
+                        <label class="layui-form-label">提交用户</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="userName" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                      <label class="layui-form-label">提交时间</label>
+                      <div class="layui-input-inline">
+                        <input type="text" name="time1" class="layui-input" id="test2" placeholder="yyyy-MM-dd">
+                      </div>
+                    </div>
+
+                        <div class="layui-inline">
+                            <button type="submit" class="layui-btn layui-btn-primary" lay-submit  lay-filter="data-search-btn"><i class="layui-icon"></i> 搜 索</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </fieldset>
+
+
+        <script type="text/html" id="toolbarDemo">
+            <div class="layui-btn-container">
+                <button class="layui-btn layui-btn-sm layui-btn-danger data-delete-btn"> 删除建议信息 </button>
+            </div>
+        </script>
+
+        <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
+
+        <script type="text/html" id="currentTableBar">
+            <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">处理</a>
+            <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>
+        </script>
+        <script type="text/html" id="buttonTpl">
+          {{#  if(d.Processing_state == '已处理'){ }}
+            <button class="layui-btn layui-btn-normal layui-btn-xs">已处理</button>
+          {{#  } else if(d.Processing_state == '待处理'){ }}
+            <button class="layui-btn layui-btn-primary layui-btn-xs">待处理</button>
+          {{#  } else{ }}
+            <button class="layui-btn layui-btn-warm layui-btn-xs">处理中</button>
+          {{#  } }}
+        </script>
+
+    </div>
+</div>
+
+
+  <script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+  <script>
+    layui.use(['form', 'table','laydate'], function () {
+      var $ = layui.jquery,
+        form = layui.form,
+        table = layui.table,
+        laydate = layui.laydate,
+        layuimini = layui.layuimini;
+        
+      laydate.render({
+        elem: '#test1',
+      });
+      laydate.render({
+        elem: '#test2',
+      });
+
+      table.render({
+        elem: '#currentTableId',
+        url: '../../api/问题管理/proposal.json',
+        toolbar: '#toolbarDemo',
+        defaultToolbar: ['filter', 'exports', 'print', {
+          title: '提示',
+          layEvent: 'LAYTABLE_TIPS',
+          icon: 'layui-icon-tips'
+        }],
+        cols: [[
+          { type: "checkbox", width: 50, align: "center", fixed: "left" },
+          { field: 'id', width: 80,  align: "center",title: '序号', sort: true },
+          { field: 'userName', width: 150,  align: "center",title: '提交用户', sort: true },
+          { field: 'strTime', width: 150,  align: "center",title: '提交时间' , sort: true},
+          { field: 'Processing_personnel', width: 130, align: "center", title: '处理人员', sort: true },
+          { field: 'processing_Time', width: 150,  align: "center",title: '处理时间' , sort: true},
+          { field: 'Suggested_types', width: 130, align: "center", title: '建议类型', sort: true },
+          { field: 'Recommendation_details', width: 370, align: "center", title: '建议详情' },
+          { field: 'Processing_state', width: 250, align: "center",	templet: "#buttonTpl",  title: '处理状态' },
+          { title: '操作',  templet: '#currentTableBar', fixed: "right", align: "center" }
+        ]],
+        limits: [10, 15, 20, 25, 50, 100],
+        limit: 15,
+        page: true
+      });
+
+      // 监听搜索操作
+      form.on('submit(data-search-btn)', function (data) {
+        var result = JSON.stringify(data.field);
+        layer.alert(result, {
+          title: '最终的搜索信息'
+        });
+
+        //执行搜索重载
+        table.reload('currentTableId', {
+          page: {
+            curr: 1
+          }
+          , where: {
+            searchParams: result
+          }
+        }, 'data');
+
+        return false;
+      });
+
+
+      // 监听删除操作
+      $(".data-delete-btn").on("click", function () {
+        var checkStatus = table.checkStatus('currentTableId')
+          , data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      });
+
+      //监听表格复选框选择
+      table.on('checkbox(currentTableFilter)', function (obj) {
+        console.log(obj)
+      });
+
+      table.on('tool(currentTableFilter)', function (obj) {
+        var data = obj.data;
+        if (obj.event === 'edit') {
+
+          var index = layer.open({
+            title: '查看建议',
+            type: 2,
+            shade: 0.2,
+            maxmin: true,
+            shadeClose: true,
+            area: ['100%', '100%'],
+            content: 'proposal.html',
+          });
+          $(window).on("resize", function () {
+            layer.full(index);
+          });
+          return false;
+        } else if (obj.event === 'delete') {
+          layer.confirm('真的删除行么', function (index) {
+            obj.del();
+            layer.close(index);
+          });
+        }
+      });
+
+    });
+  </script>
+</body>
+
+</html>

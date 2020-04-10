@@ -1,0 +1,341 @@
+ 
+ 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>基于 layui 的极简社区页面模版</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="keywords" content="fly,layui,前端社区">
+  <meta name="description" content="Fly社区是模块化前端UI框架Layui的官网社区，致力于为web开发提供强劲动力">
+  <link rel="stylesheet" href="./lib/layui-v2.5.5/css/layui.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+
+<div class="c-header layui-bg-black">
+  <div class="layui-container">
+    <a class="c-logo" href="/">
+      <img src="../res/images/logo.png" alt="layui">
+    </a>
+    <ul class="layui-nav c-nav layui-hide-xs">
+      <li class="layui-nav-item layui-this">
+        <a href="#"><i class="iconfont icon-jiaoliu"></i>菜单</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="#"><i class="iconfont icon-iconmingxinganli"></i>菜单</a>
+        <dl class="layui-nav-child">
+          <dd><a href="user/set.html"><i class="layui-icon">&#xe620;</i>内容</a></dd>
+          <dd><a href="user/message.html"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>内容</a></dd>
+          <dd><a href="user/home.html"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>内容</a></dd>
+          <hr style="margin: 5px 0;">
+          <dd><a href="#" style="text-align: center;">内容</a></dd>
+        </dl>
+      </li>
+	  <li class="layui-nav-item">
+	    <a href="#"><i class="iconfont icon-iconmingxinganli"></i>菜单</a>
+	    <dl class="layui-nav-child">
+	      <dd><a href="user/set.html"><i class="layui-icon">&#xe620;</i>内容</a></dd>
+	      <dd><a href="user/message.html"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>内容</a></dd>
+	      <dd><a href="user/home.html"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>内容</a></dd>
+	      <hr style="margin: 5px 0;">
+	      <dd><a href="#" style="text-align: center;">内容</a></dd>
+	    </dl>
+	  </li>
+    </ul>
+	<ul class="layui-nav c-nav layui-hide-md ">
+		<li class="layui-nav-item">
+		  <a href="case/case.html"><i class="iconfont icon-iconmingxinganli"></i>菜单</a>
+		  <dl class="layui-nav-child">
+		    <dd><a href="user/set.html"><i class="layui-icon">&#xe620;</i>内容</a></dd>
+		    <dd><a href="user/message.html"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>内容</a></dd>
+		    <dd><a href="user/home.html"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>内容</a></dd>
+		    <hr style="margin: 5px 0;">
+		    <dd><a href="#" style="text-align: center;">内容</a></dd>
+		  </dl>
+		</li>
+	</ul>
+
+    
+    <ul class="layui-nav c-nav-user">
+      
+      <!-- 未登入的状态 -->
+      <!-- <li class="layui-nav-item">
+        <a class="iconfont icon-touxiang layui-hide-xs" href="user/login.html"></a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="user/login.html">登入</a>
+      </li>
+      <li class="layui-nav-item">
+        <a href="user/reg.html">注册</a>
+      </li>
+      <li class="layui-nav-item layui-hide-xs">
+        <a href="/app/qq/" onclick="layer.msg('正在通过QQ登入', {icon:16, shade: 0.1, time:0})" title="QQ登入" class="iconfont icon-qq"></a>
+      </li>
+      <li class="layui-nav-item layui-hide-xs">
+        <a href="/app/weibo/" onclick="layer.msg('正在通过微博登入', {icon:16, shade: 0.1, time:0})" title="微博登入" class="iconfont icon-weibo"></a>
+      </li> -->
+      
+      <!-- 登入后的状态 -->
+      
+      <li class="layui-nav-item">
+        <a class="c-nav-avatar" href="javascript:;">
+          <cite class="layui-hide-xs">用户名</cite>
+          <i class="iconfont icon-renzheng layui-hide-xs" title="认证信息：layui 作者"></i>
+          <i class="layui-badge c-badge-vip layui-hide-xs">VIP3</i>
+          <img src="https://tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg">
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="user/set.html"><i class="layui-icon">&#xe620;</i>基本设置</a></dd>
+          <dd><a href="user/message.html"><i class="iconfont icon-tongzhi" style="top: 4px;"></i>我的消息</a></dd>
+          <dd><a href="user/home.html"><i class="layui-icon" style="margin-left: 2px; font-size: 22px;">&#xe68e;</i>我的主页</a></dd>
+          <hr style="margin: 5px 0;">
+          <dd><a href="/user/logout/" style="text-align: center;">退出</a></dd>
+        </dl>
+      </li>
+     
+    </ul>
+  </div>
+</div>
+
+
+<div class="c-panel c-column">
+  <div class="layui-container">
+    <ul class="layui-clear">
+      <li class="layui-hide-xs layui-this"><a href="/">导航</a></li> 
+      <li><a href="jie/index.html">导航</a></li> 
+      <li><a href="jie/index.html">导航<span class="layui-badge-dot"></span></a></li> 
+      <li><a href="jie/index.html">导航</a></li> 
+      <li><a href="jie/index.html">导航</a></li> 
+      <li><a href="jie/index.html">导航</a></li> 
+      <li><a href="jie/index.html">导航</a></li> 
+      <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><span class="c-mid"></span></li> 
+      
+      <!-- 用户登入后显示 -->
+      <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="user/index.html">导航</a></li> 
+      <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><a href="user/index.html#collection">导航</a></li> 
+    </ul> 
+    
+    <div class="c-column-right layui-hide-xs"> 
+      <span class="c-search"><i class="layui-icon"></i></span> 
+      <a href="index.html" class="layui-btn">控制台</a> 
+    </div> 
+    <div class="layui-hide-sm layui-show-xs-block" style="margin-top: -10px; padding-bottom: 10px; text-align: center;"> 
+      <a href="index.html" class="layui-btn">控制台</a> 
+    </div> 
+  </div>
+</div>
+
+
+<div class="c-case-header">
+  <!-- <p class="c-case-year">2017</p> -->
+  <!-- <a href="/case/{{ year }}/">
+    <img class="c-case-banner" src="#" alt="热门产品">
+  </a>
+  <div class="c-case-btn">
+    <a href="javascript:;" class="layui-btn layui-btn-big c-case-active" data-type="push"></a>
+    <a href="" class="layui-btn layui-btn-primary layui-btn-big">我的案例</a>
+    
+    <a href="http://fly.layui.com/jie/11996/" target="_blank" style="padding: 0 15px; text-decoration: underline">案例要求</a>
+  </div> -->
+</div>
+  
+<div class="c-main" style="overflow: hidden;">
+
+  <div class="c-tab-border c-discount-tab">
+    <!-- <span>
+      <a href="" class="tab-this">2017年度</a>
+      <a href="">2016年度</a>
+    </span> -->
+  </div>
+  <div class="layui-tab layui-tab-brief">
+    <ul class="layui-tab-title">
+      <li class="layui-this"><a href="">精选推荐</a></li>
+      <li><a href="#"></a>企业特惠</li>
+	  <li><a href="#"></a>单品活动</li>
+    </ul>
+  </div>
+
+  <ul class="c-discount-list">
+    <li data-id="123">
+      <a class="c-discount-img" href="details.html" target="_blank" >
+        <img src="../../res/images/fly.jpg" alt="Fly社区">
+        <cite class="layui-btn layui-btn-primary layui-btn-small">详情</cite>
+      </a>
+      <h2><a href="details.html" target="_blank">产品名称</a></h2>
+      <p class="c-discount-desc">Fly 社区是 layui 的官方社区，全站的前端层面基于 Layui 风格编写，轻量而简洁，并且模版已经开源，可用于极简社区模板。</p>
+      <div class="c-discount-info">
+        <a href="../user/home.html" class="c-discount-user" target="_blank">xxx</a>
+        <p class="layui-elip" style="font-size: 12px;"><span style="color: #666;"></span> 2017-11-30</p>
+        <p>价格<a class="c-discount-nums c-discount-active" href="javascript:;" data-type="showPraise" style=" padding:0 5px; color: #01AAED;">666</a>/￥</p>
+        <button class="layui-btn layui-btn-primary c-discount-active" data-type="praise">加入购物车</button>
+        <!-- <button class="layui-btn  c-discount-active" data-type="praise">已赞</button> -->
+      </div>
+    </li>
+	<li data-id="123">
+	  <a class="c-discount-img" href="details.html" target="_blank" >
+	    <img src="../../res/images/fly.jpg" alt="Fly社区">
+	    <cite class="layui-btn layui-btn-primary layui-btn-small">详情</cite>
+	  </a>
+	  <h2><a href="details.html" target="_blank">产品名称</a></h2>
+	  <p class="c-discount-desc">Fly 社区是 layui 的官方社区，全站的前端层面基于 Layui 风格编写，轻量而简洁，并且模版已经开源，可用于极简社区模板。</p>
+	  <div class="c-discount-info">
+	    <a href="../user/home.html" class="c-discount-user" target="_blank">xxx</a>
+	    <p class="layui-elip" style="font-size: 12px;"><span style="color: #666;"></span> 2017-11-30</p>
+	    <p>价格<a class="c-discount-nums c-discount-active" href="javascript:;" data-type="showPraise" style=" padding:0 5px; color: #01AAED;">666</a>/￥</p>
+	    <button class="layui-btn layui-btn-primary c-discount-active" data-type="praise">加入购物车</button>
+	    <!-- <button class="layui-btn  c-discount-active" data-type="praise">已赞</button> -->
+	  </div>
+	</li>
+	<li data-id="123">
+	  <a class="c-discount-img" href="details.html" target="_blank" >
+	    <img src="../../res/images/fly.jpg" alt="Fly社区">
+	    <cite class="layui-btn layui-btn-primary layui-btn-small">详情</cite>
+	  </a>
+	  <h2><a href="details.html" target="_blank">产品名称</a></h2>
+	  <p class="c-discount-desc">Fly 社区是 layui 的官方社区，全站的前端层面基于 Layui 风格编写，轻量而简洁，并且模版已经开源，可用于极简社区模板。</p>
+	  <div class="c-discount-info">
+	    <a href="../user/home.html" class="c-discount-user" target="_blank">xxx</a>
+	    <p class="layui-elip" style="font-size: 12px;"><span style="color: #666;"></span> 2017-11-30</p>
+	    <p>价格<a class="c-discount-nums c-discount-active" href="javascript:;" data-type="showPraise" style=" padding:0 5px; color: #01AAED;">666</a>/￥</p>
+	    <button class="layui-btn layui-btn-primary c-discount-active" data-type="praise">加入购物车</button>
+	    <!-- <button class="layui-btn  c-discount-active" data-type="praise">已赞</button> -->
+	  </div>
+	</li>
+	<li data-id="123">
+	  <a class="c-discount-img" href="details.html" target="_blank" >
+	    <img src="../../res/images/fly.jpg" alt="Fly社区">
+	    <cite class="layui-btn layui-btn-primary layui-btn-small">详情</cite>
+	  </a>
+	  <h2><a href="details.html" target="_blank">产品名称</a></h2>
+	  <p class="c-discount-desc">Fly 社区是 layui 的官方社区，全站的前端层面基于 Layui 风格编写，轻量而简洁，并且模版已经开源，可用于极简社区模板。</p>
+	  <div class="c-discount-info">
+	    <a href="../user/home.html" class="c-discount-user" target="_blank">xxx</a>
+	    <p class="layui-elip" style="font-size: 12px;"><span style="color: #666;"></span> 2017-11-30</p>
+	    <p>价格<a class="c-discount-nums c-discount-active" href="javascript:;" data-type="showPraise" style=" padding:0 5px; color: #01AAED;">666</a>/￥</p>
+	    <button class="layui-btn layui-btn-primary c-discount-active" data-type="praise">加入购物车</button>
+	    <!-- <button class="layui-btn  c-discount-active" data-type="praise">已赞</button> -->
+	  </div>
+	</li>
+	<li data-id="123">
+	  <a class="c-discount-img" href="details.html" target="_blank" >
+	    <img src="../../res/images/fly.jpg" alt="Fly社区">
+	    <cite class="layui-btn layui-btn-primary layui-btn-small">详情</cite>
+	  </a>
+	  <h2><a href="details.html" target="_blank">产品名称</a></h2>
+	  <p class="c-discount-desc">Fly 社区是 layui 的官方社区，全站的前端层面基于 Layui 风格编写，轻量而简洁，并且模版已经开源，可用于极简社区模板。</p>
+	  <div class="c-discount-info">
+	    <a href="../user/home.html" class="c-discount-user" target="_blank">xxx</a>
+	    <p class="layui-elip" style="font-size: 12px;"><span style="color: #666;"></span> 2017-11-30</p>
+	    <p>价格<a class="c-discount-nums c-discount-active" href="javascript:;" data-type="showPraise" style=" padding:0 5px; color: #01AAED;">666</a>/￥</p>
+	    <button class="layui-btn layui-btn-primary c-discount-active" data-type="praise">加入购物车</button>
+	    <!-- <button class="layui-btn  c-discount-active" data-type="praise">已赞</button> -->
+	  </div>
+	</li>
+	<li data-id="123">
+	  <a class="c-discount-img" href="details.html" target="_blank" >
+	    <img src="../../res/images/fly.jpg" alt="Fly社区">
+	    <cite class="layui-btn layui-btn-primary layui-btn-small">详情</cite>
+	  </a>
+	  <h2><a href="details.html" target="_blank">产品名称</a></h2>
+	  <p class="c-discount-desc">Fly 社区是 layui 的官方社区，全站的前端层面基于 Layui 风格编写，轻量而简洁，并且模版已经开源，可用于极简社区模板。</p>
+	  <div class="c-discount-info">
+	    <a href="../user/home.html" class="c-discount-user" target="_blank">xxx</a>
+	    <p class="layui-elip" style="font-size: 12px;"><span style="color: #666;"></span> 2017-11-30</p>
+	    <p>价格<a class="c-discount-nums c-discount-active" href="javascript:;" data-type="showPraise" style=" padding:0 5px; color: #01AAED;">666</a>/￥</p>
+	    <button class="layui-btn layui-btn-primary c-discount-active" data-type="praise">加入购物车</button>
+	    <!-- <button class="layui-btn  c-discount-active" data-type="praise">已赞</button> -->
+	  </div>
+	</li>
+	<li data-id="123">
+	  <a class="c-discount-img" href="details.html" target="_blank" >
+	    <img src="../../res/images/fly.jpg" alt="Fly社区">
+	    <cite class="layui-btn layui-btn-primary layui-btn-small">详情</cite>
+	  </a>
+	  <h2><a href="details.html" target="_blank">产品名称</a></h2>
+	  <p class="c-discount-desc">Fly 社区是 layui 的官方社区，全站的前端层面基于 Layui 风格编写，轻量而简洁，并且模版已经开源，可用于极简社区模板。</p>
+	  <div class="c-discount-info">
+	    <a href="../user/home.html" class="c-discount-user" target="_blank">xxx</a>
+	    <p class="layui-elip" style="font-size: 12px;"><span style="color: #666;"></span> 2017-11-30</p>
+	    <p>价格<a class="c-discount-nums c-discount-active" href="javascript:;" data-type="showPraise" style=" padding:0 5px; color: #01AAED;">666</a>/￥</p>
+	    <button class="layui-btn layui-btn-primary c-discount-active" data-type="praise">加入购物车</button>
+	    <!-- <button class="layui-btn  c-discount-active" data-type="praise">已赞</button> -->
+	  </div>
+	</li>
+	<li data-id="123">
+	  <a class="c-discount-img" href="details.html" target="_blank" >
+	    <img src="../../res/images/fly.jpg" alt="Fly社区">
+	    <cite class="layui-btn layui-btn-primary layui-btn-small">详情</cite>
+	  </a>
+	  <h2><a href="details.html" target="_blank">产品名称</a></h2>
+	  <p class="c-discount-desc">Fly 社区是 layui 的官方社区，全站的前端层面基于 Layui 风格编写，轻量而简洁，并且模版已经开源，可用于极简社区模板。</p>
+	  <div class="c-discount-info">
+	    <a href="../user/home.html" class="c-discount-user" target="_blank">xxx</a>
+	    <p class="layui-elip" style="font-size: 12px;"><span style="color: #666;"></span> 2017-11-30</p>
+	    <p>价格<a class="c-discount-nums c-discount-active" href="javascript:;" data-type="showPraise" style=" padding:0 5px; color: #01AAED;">666</a>/￥</p>
+	    <button class="layui-btn layui-btn-primary c-discount-active" data-type="praise">加入购物车</button>
+	    <!-- <button class="layui-btn  c-discount-active" data-type="praise">已赞</button> -->
+	  </div>
+	</li>
+  </ul>
+  
+  <!-- <blockquote class="layui-elem-quote layui-quote-nm">暂无数据</blockquote> -->
+
+  <div style="text-align: center;">
+    <div class="laypage-main">
+      <span class="laypage-curr">1</span>
+      <a href="">2</a><a href="">3</a>
+      <a href="">4</a>
+      <a href="">5</a>
+      <span>…</span>
+      <a href="" class="laypage-last" title="尾页">尾页</a>
+      <a href="" class="laypage-next">下一页</a>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- footer部分 -->
+  <div class="footer">
+    <div class="layui-container">
+      <p class="footer-web">
+        <a href="feedback.html">意见反馈</a>
+        <a href="feedback.html">意见反馈</a>
+        <a href="feedback.html">意见反馈</a>
+        <a href="feedback.html">意见反馈</a>
+        <a href="feedback.html">意见反馈</a>
+        <a href="feedback.html">意见反馈</a>
+        <a href="feedback.html">意见反馈</a>
+      </p>
+      <div class="layui-row footer-contact">
+        <div class="layui-col-sm2 layui-col-lg1"><img src="../res/static/img/erweima.jpg"></div>
+        <div class="layui-col-sm10 layui-col-lg11">
+          <div class="layui-row">
+            <div class="layui-col-sm6 layui-col-md8 layui-col-lg9">
+              <p class="contact-top"><i class="layui-icon layui-icon-cellphone"></i>&nbsp;400-xxxxxxxx&nbsp;&nbsp;(9:00-18:00)</p>
+              <p class="contact-bottom"><i class="layui-icon layui-icon-home"></i>&nbsp;xxxxxxxx@163.com</span></p>
+            </div>
+            <div class="layui-col-sm6 layui-col-md4 layui-col-lg3">
+              <p class="contact-top"><span class="right">该模板版权归 <a href="https://www.layui.com/" target="_blank">xxxxxxxx.com</a> 所有</span></p>
+              <p class="contact-bottom"><span class="right">xxxxxxxx</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+<script src="./lib/layui-v2.5.5/layui.js"></script>
+<script>
+layui.config({
+  version: "3.0.0"
+  ,base: './js/' //这里实际使用时，建议改成绝对路径
+}).extend({
+  fly: 'index'
+}).use('fly');
+</script>
+</body>
+</html>

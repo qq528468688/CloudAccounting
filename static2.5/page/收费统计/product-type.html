@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>产品类型收费情况统计</title>
+  <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.mobile.css" media="all">
+   <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/laydate.css" media="all">
+
+
+    <style>
+	
+        .body_top {
+            margin-top: 5%;
+
+        }
+
+        .btn_size {
+            width: 100px;
+            height: 38px;
+            margin-left: 10px;
+        }
+
+        .table_css {
+            width: 600px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <!--头部-->
+    <header class="layui-fluid"></header>
+
+    <!--内容部分-->
+    <div class="layui-container">
+        <!--利润总计-->
+        <div class="body_top layui-col-md-offset2">
+            <div>
+                <h1>总计：</h1>
+            </div>
+            <div class="layui-row" style="margin-top:10px;">
+                <div class="layui-col-md4">个人用户利润额总计：</div>
+                <div class="layui-col-md4">企业用户利润额总计：</div>
+                <div class="layui-col-md4">总体利润额总计：</div>
+            </div>
+        </div>
+
+        <!--统计部分-->
+        <div class="layui-row layui-col-md-offset2" style="margin-top: 5%;">
+
+            <div class="layui-col-md4">
+                <div class="layui-inline">
+                    <label class="layui-form-label">客户名称：</label>
+                    <div class="layui-input-inline">
+                        <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off"
+                            class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4">
+                <div class="layui-inline">
+                    <label class="layui-form-label">产品类型：</label>
+                    <div class="layui-input-inline">
+                        <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off"
+                            class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md4 ">
+                <button type="button" class="layui-btn layui-btn-normal btn_size">统计</button>
+            </div>
+
+
+        </div>
+        <!--开始日期-->
+        <div class="layui-row layui-col-md-offset2" style="margin-top: 3%;">
+            <div class="layui-col-md4 ">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">开始日期：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input" id="test11" placeholder="请选择日期">
+                    </div>
+                </div>
+            </div>
+            <!--结束日期-->
+            <div class="layui-col-md4 ">
+                <div class="layui-inline ">
+                    <label class="layui-form-label">结束日期：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input" id="test" placeholder="请选择日期">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!--container-->
+    </div>
+
+
+     <!--选项卡-->
+	 <div class="layui-tab " style="margin-top: 5%;">
+	   <ul class="layui-tab-title layui-col-md-offset3">
+	     <li class="layui-this">个人客户产品名称收费情况查询</li>
+	     <li>企业客户产品名称收费情况查询</li>
+	 
+	   </ul>
+	   <div class="layui-tab-content">
+	     <div class="layui-tab-item layui-show layui-col-md-offset3">
+            <table class="layui-table table_css " style="text-align: center;">
+                <colgroup>
+                    <col width="60">
+                    <col width="120">
+                    <col width="130">
+                    <col width="110">
+                    <col width="80">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">序号</th>
+                        <th style="text-align: center;">客户名称</th>
+                        <th style="text-align: center;">产品类型名称</th>
+                        <th style="text-align: center;">缴费金额（元）</th>
+                        <th style="text-align: center;">缴费日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>刘贝贝</td>
+                        <td>云数据库</td>
+                        <td>3999</td>
+                        <td>2020-1-6</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>一介莽夫</td>
+                        <td>人脸识别</td>
+                        <td>8000</td>
+                        <td>2020-1-1</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>小明</td>
+                        <td>私有网络</td>
+                        <td>3800</td>
+                        <td>2020-1-2</td>
+                    </tr>
+					<tr>
+					    <td>4</td>
+					    <td>小红</td>
+					    <td>云支付</td>
+					    <td>6000</td>
+					    <td>2020-1-3</td>
+					</tr>
+                </tbody>
+            </table>
+			<div style="width: 600px;" id="demo5">
+			</div>
+	     </div>
+	     <div class="layui-tab-item layui-col-md-offset3" >
+			 <table class="layui-table table_css " style="text-align: center;">
+			     <colgroup>
+			         <col width="60">
+			         <col width="120">
+			         <col width="130">
+			         <col width="110">
+			         <col width="80">
+			     </colgroup>
+			     <thead>
+			         <tr>
+			             <th style="text-align: center;">序号</th>
+			             <th style="text-align: center;">客户名称</th>
+			             <th style="text-align: center;">产品类型名称</th>
+			             <th style="text-align: center;">缴费金额（元）</th>
+			             <th style="text-align: center;">缴费日期</th>
+			         </tr>
+			     </thead>
+			     <tbody>
+			         <tr>
+			             <td>1</td>
+			             <td>阿里巴巴</td>
+			             <td>云函数</td>
+			             <td>9000</td>
+			             <td>2020-1-1</td>
+			         </tr>
+			         <tr>
+			             <td>2</td>
+			             <td>拼多多</td>
+			             <td>批量计算</td>
+			             <td>6999</td>
+			             <td>2020-1-3</td>
+			         </tr>
+			         <tr>
+			             <td>3</td>
+			             <td>南宁科技</td>
+			             <td>云硬盘</td>
+			             <td>6000</td>
+			             <td>2020-1-4</td>
+			         </tr>
+			 		<tr>
+			 		    <td>4</td>
+			 		    <td>盛源行</td>
+			 		    <td>即时通信IM</td>
+			 		    <td>4000</td>
+			 		    <td>2020-1-5</td>
+			 		</tr>
+			     </tbody>
+			 </table>
+			 <div style="width: 600px;" id="demo6">
+			 </div>
+			 </div>
+	   </div>
+	 </div>
+    
+
+ 
+
+
+    </div>
+
+    <script src="../../lib/layui-v2.5.5/laydate.js" charset="utf-8"></script>
+  <script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+  <script src="../lib/layui-v2.5.5/layui.all.js" charset="utf-8"></script>
+   
+	
+	<!--选项卡-->
+	<script>
+	layui.use('element', function(){
+	  var $ = layui.jquery
+	  ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+	  
+	  //触发事件
+	  var active = {
+	    tabAdd: function(){
+	      //新增一个Tab项
+	      element.tabAdd('demo', {
+	        title: '新选项'+ (Math.random()*1000|0) //用于演示
+	        ,content: '内容'+ (Math.random()*1000|0)
+	        ,id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
+	      })
+	    }
+	    ,tabDelete: function(othis){
+	      //删除指定Tab项
+	      element.tabDelete('demo', '44'); //删除：“商品管理”
+	      
+	      
+	      othis.addClass('layui-btn-disabled');
+	    }
+	    ,tabChange: function(){
+	      //切换到指定Tab项
+	      element.tabChange('demo', '22'); //切换到：用户管理
+	    }
+	  };
+	  
+	  $('.site-demo-active').on('click', function(){
+	    var othis = $(this), type = othis.data('type');
+	    active[type] ? active[type].call(this, othis) : '';
+	  });
+	  
+	  //Hash地址的定位
+	  var layid = location.hash.replace(/^#test=/, '');
+	  element.tabChange('test', layid);
+	  
+	  element.on('tab(test)', function(elem){
+	    location.hash = 'test='+ $(this).attr('lay-id');
+	  });
+	  
+	});
+	</script>
+	
+	<!--日期时间-->
+    <script>
+        layui.use('laydate', function () {
+            var laydate = layui.laydate;
+
+
+            //自定义格式
+            laydate.render({
+                elem: '#test11'
+                , format: 'yyyy年MM月dd日'
+            });
+            laydate.render({
+                elem: '#test'
+                , format: 'yyyy年MM月dd日'
+            });
+            laydate.render({
+                elem: '#test12'
+                , format: 'dd/MM/yyyy'
+            });
+            laydate.render({
+                elem: '#test13'
+                , format: 'yyyyMMdd'
+            });
+            laydate.render({
+                elem: '#test14'
+                , type: 'time'
+                , format: 'H点m分'
+            });
+            laydate.render({
+                elem: '#test15'
+                , type: 'month'
+                , range: '~'
+                , format: 'yyyy-MM'
+            });
+            laydate.render({
+                elem: '#test16'
+                , type: 'datetime'
+                , range: '到'
+                , format: 'yyyy年M月d日H时m分s秒'
+            });
+
+
+            //直接嵌套显示
+            laydate.render({
+                elem: '#test-n1'
+                , position: 'static'
+            });
+            laydate.render({
+                elem: '#test-n2'
+                , position: 'static'
+                , lang: 'en'
+            });
+            laydate.render({
+                elem: '#test-n3'
+                , type: 'month'
+                , position: 'static'
+            });
+            laydate.render({
+                elem: '#test-n4'
+                , type: 'time'
+                , position: 'static'
+            });
+        });
+    </script>
+    <!--分页-->
+    <script>
+        layui.use(['laypage', 'layer'], function () {
+            var laypage = layui.laypage
+                , layer = layui.layer;
+
+
+            //开启HASH
+            laypage.render({
+                elem: 'demo5'
+                , count: 500
+                , curr: location.hash.replace('#!fenye=', '') //获取hash值为fenye的当前页
+                , hash: 'fenye' //自定义hash值
+            });
+            //开启HASH2
+            laypage.render({
+                elem: 'demo6'
+                , count: 500
+                , curr: location.hash.replace('#!fenye=', '') //获取hash值为fenye的当前页
+                , hash: 'fenye' //自定义hash值
+            });
+
+
+            //调用分页
+            laypage.render({
+                elem: 'demo20'
+                , count: data.length
+                , jump: function (obj) {
+                    //模拟渲染
+                    document.getElementById('biuuu_city_list').innerHTML = function () {
+                        var arr = []
+                            , thisData = data.concat().splice(obj.curr * obj.limit - obj.limit, obj.limit);
+                        layui.each(thisData, function (index, item) {
+                            arr.push('<li>' + item + '</li>');
+                        });
+                        return arr.join('');
+                    }();
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

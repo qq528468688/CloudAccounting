@@ -1,0 +1,70 @@
+{
+    "code": 0,
+    "msg": "",
+    "data": [
+      {
+        "id":1,
+        "username":"张六",
+        "Address":"SYH",
+        "Phone":"12345678999",
+        "Ein":"564654654",
+        "information":"113456789",
+        "Time":"2020-1-15",
+        "zt":"未审核",
+        "url":[
+          "../../images/1.jpg"
+ 
+         ]
+        
+      },
+      {
+        "id":2,
+        "username":"张六",
+        "Address":"SYH",
+        "Phone":"12345678999",
+        "Ein":"564654654",
+        "information":"113456789",
+        "Time":"2020-1-15",
+        "zt":"未审核",
+        "url":[
+          "../../images/4.jpg"
+ 
+         ]
+        
+        
+      },
+      {
+        "id":3,
+        "username":"张六",
+        "Address":"SYH",
+        "Phone":"12345678999",
+        "Ein":"564654654",
+        "information":"113456789",
+        "Time":"2020-1-15",
+        "zt":"未通过",
+        "url":[
+          "../../images/3.jpg"
+ 
+         ]
+        
+      },
+      {
+        "id":4,
+        "username":"张六",
+        "Address":"SYH",
+        "Phone":"12345678999",
+        "Ein":"564654654",
+        "information":"113456789",
+        "Time":"2020-1-15",
+        "zt":"通过",
+        "url":[
+          "../../images/2.jpg"
+ 
+         ]
+        
+        
+      }
+
+      
+    ]
+  }

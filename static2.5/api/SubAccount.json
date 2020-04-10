@@ -1,0 +1,52 @@
+{
+    "code": 0,
+    "msg": "",
+    "data": [
+      {
+        "id":1,
+        "userid":"54656654",
+        "CompanyName":"李白",
+        "Ein":"564654654@qqc.com",
+        "TheBankAccount":"无",
+        "Time":"无",
+        "Money":"无"
+        
+        
+      },
+      {
+        "id":2,
+        "userid":"54656654",
+        "CompanyName":"李白",
+        "Ein":"564654654@qqc.com",
+        "TheBankAccount":"无",
+        "Time":"无",
+        "Money":"无"
+        
+        
+      },
+      {
+        "id":3,
+        "userid":"54656654",
+        "CompanyName":"李白",
+        "Ein":"564654654@qqc.com",
+        "TheBankAccount":"无",
+        "Time":"无",
+        "Money":"无"
+        
+        
+      },
+      {
+        "id":4,
+        "userid":"54656654",
+        "CompanyName":"李白",
+        "Ein":"564654654@qqc.com",
+        "TheBankAccount":"无",
+        "Time":"无",
+        "Money":"无"
+        
+        
+      }
+
+      
+    ]
+  }

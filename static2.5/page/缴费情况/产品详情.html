@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>layui</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../css/public.css" media="all">
+</head>
+
+<body>
+
+
+  <h3 style="text-align: center;">产品详情</h3><br />
+  <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
+  <div class="layuimini-container">
+    <div class="layuimini-main">
+      <fieldset class="table-search-fieldset">
+        <div class="layui-form">
+          <table class="layui-table">
+
+            <colgroup>
+              <col width="300">
+              <col width="350">
+              <col width="300">
+              <col width="350>" </colgroup>
+            <tbody>
+              <tr>
+                <td align="center">地域</td>
+                <td>上海</td>
+                <td align="center">可用区</td>
+                <td>上海二区</td>
+              </tr>
+              <tr>
+                <td align="center">机型</td>
+                <td>系列4、标准型1核CPU、1G内存
+                </td>
+                <td align="center"> 镜像</td>
+                <td>CentOS 7.6 64位
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  存储</td>
+                <td>系统盘（50G高性能云硬盘）
+                </td>
+                <td align="center">
+                  网络</td>
+                <td>vpc-gax1io7e|subnet-ctgj9uhl
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  带宽</td>
+                <td>按带宽计费（带宽1Mbps）
+                </td>
+                <td align="center">
+                  名称</td>
+                <td>activity-cvm-2020-02-14
+                </td>
+              </tr>
+              <tr>
+                <td align="center">资源ID</td>
+                <td>ins-pweb4lt1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <a onclick="member_stop(this,'10001')" href="javascript:;" title="启用" class="layui-btn ">
+          <e>续费</e>
+        </a>
+        <a onclick="member_open(this,'10001')" href="javascript:;" title="启用" class="layui-btn ">
+          <e>充值</e>
+        </a>
+      
+      </fieldset>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+  <script>
+    layui.use('layer', 'table', 'from', function () {
+      var $ = layui.jquery,
+        layer = layui.layer,
+        table = layui.table,
+        from = layui.from;
+
+
+    });
+    function member_open(obj, id) {
+    layer.open({
+            type: 2,
+            btn:["返回"],
+            area: ['80%', '95%'],
+            content: './../../page/充值管理/Recharge.html' //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+          });
+        }
+    function member_stop(obj, id) {
+      layer.confirm('确认续费么', function (index) {
+        layer.msg('续费成功', { icon: 1 });
+      });
+
+    }
+
+  </script>
+</body>
+
+</html>

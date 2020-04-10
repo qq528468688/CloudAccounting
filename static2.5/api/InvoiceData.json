@@ -1,0 +1,62 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 100,
+  "data": [
+    {
+      "id":1,
+      "userid": "145258155",
+      "type": "充值",
+      "types": "支付宝",
+      "time":"2020-02-18",
+      "wealth": 600,
+      "wealths": 800,
+      "wealthes": 1400
+    },
+    {
+      "id":2,
+      "userid": "145258155",
+      "type": "充值",
+      "types": "支付宝",
+      "time":"2020-02-18",
+      "wealth": 600,
+      "wealths": 1400,
+      "wealthes": 2000
+    },
+    
+    {
+      "id":3,
+      "userid": "145258155",
+      "type": "充值",
+      "types": "支付宝",
+      "time":"2020-02-18",
+      "wealth": 800,
+      "wealths": 2000,
+      "wealthes": 2800
+    },
+    {
+      "id":4,
+      "userid": "145258155",
+      "type": "充值",
+      "types": "支付宝",
+      "time":"2020-02-18",
+      "wealth": 600,
+      "wealths": 2800,
+      "wealthes": 3400
+    },
+    {
+      "id":5,
+      "userid": "145258155",
+      "type": "提现",
+      "types": "---",
+      "time":"2020-02-18",
+      "wealth": -300,
+      "wealths": 3400,
+      "wealthes": 3100
+    }
+     
+
+        
+    
+  ]
+}

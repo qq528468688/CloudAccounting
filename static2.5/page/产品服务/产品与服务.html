@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>已购产品和服务</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+</head>
+<body>
+<div class="layuimini-container">
+    <div class="layuimini-main">
+
+<blockquote class="layui-elem-quote layui-text">
+广告等~~~~~~~~~~~~~~. <a href="" target="_blank">提示</a> 2. <a href="/doc/modules/form.html#render" target="_blank">提示</a>
+</blockquote>
+        <fieldset class="table-search-fieldset">
+            
+            <div style="margin: 10px 10px 10px 10px">
+                <form class="layui-form layui-form-pane" action="">
+                    <div class="layui-form-item">
+						
+						<button type="button" class="layui-btn layui-btn-normal">购买服务</button>
+                        <div class="layui-inline" style="float:right">
+                           
+                            <div class="layui-input-inline">
+                                <input type="text" name="username" autocomplete="off" class="layui-input">
+                            </div>
+							<div class="layui-inline">
+							    <button type="submit" class="layui-btn layui-btn-primary" lay-submit  lay-filter="data-search-btn"><i class="layui-icon"></i> 查询</button>
+							</div>
+                        </div>
+                        
+                       
+                    </div>
+                </form>
+            </div>
+        </fieldset>
+
+        
+
+        <table class="layui-hide" id="currentTableId" lay-filter="test">
+        <script type="text/html" id="barDemo">
+            <a  class="layui-btn layui-btn-xs layui-btn-danger data-count-edit" lay-event="edit">产品详情</a>
+        </script>
+		
+</table>
+    </div>
+</div>
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script>
+    layui.use(['form', 'table'], function () {
+        var $ = layui.jquery,
+            form = layui.form,
+            table = layui.table,
+            layuimini = layui.layuimini;
+
+        table.render({
+            elem: '#currentTableId',
+            url: '../../api/serviceandproduct.json',
+            
+           
+            cols: [[
+				
+                {field: 'productname', align: "center",width: 250, title: '产品名称'},
+				{field: 'productid', align: "center",width: 250, title: '产品id'},
+                {field: 'deliver', align: "center", width: 150, title: '交付方式'},
+				{field: 'startime', align: "center", width: 150, title: '服务开始时间'},
+				{field: 'endtime', align: "center", width: 130, title: '服务结束时间'},
+				{field: 'state', align: "center", width: 120, title: '服务状态'},
+				// {field: 'classify', minWidth: 50, title: '详细信息'},
+                 {title:  '详细信息', minWidth: 100, templet: '#barDemo', fixed: "right", align: "center"}
+               
+            ]],
+            limits: [10, 15, 20, 25, 50, 100],
+            limit: 15,
+            page: true
+        });
+
+        // 监听搜索操作
+        form.on('submit(data-search-btn)', function (data) {
+            var result = JSON.stringify(data.field);
+            layer.alert(result, {
+                title: '最终的搜索信息'
+            });
+
+            //执行搜索重载
+            table.reload('currentTableId', {
+                page: {
+                    curr: 1
+                }
+                , where: {
+                    searchParams: result
+                }
+            }, 'data');
+
+            return false;
+        });
+		
+		table.on('tool(test)', function(obj){
+		    layer.open({
+		                type: 2,
+		                title: '详情',
+		                area: ['100%', '100%'],
+		                fix: false,
+		                content: '服务详细.html',
+		                btn:['返回'],
+		                // skin: 'layui-layer-molv' ,//样式类名
+		                end: function () {
+		                    // dataTable.reloadTable();
+		                    // window.parent.layer.msg('审核成功')
+		                }
+		            });
+		    });
+    });
+</script>
+<script>
+
+</script>
+
+</body>
+</html>

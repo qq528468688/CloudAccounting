@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>客户产品问题类别统计</title>
+  <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.mobile.css" media="all">
+
+
+  <script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+  <script src="../../lib/layui-v2.5.5/layui.all.js" charset="utf-8"></script>
+ <script src="../../lib/layui-v2.5.5/echarts.min.js" charset="utf-8"></script>
+   
+	<style>
+        .body_top {
+            margin-top: 5%;
+            width: 100%;
+            background-color:white;
+        }
+
+
+
+        .table_css {
+            width: 600px;
+
+
+        }
+
+        .chart {
+            height: 300px;
+            width: 400px;
+            float: right;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!--内容部分-->
+    <div class="layui-container">
+		
+		
+		<div class="layui-tab">
+		  <ul class="layui-tab-title">
+		    <li class="layui-this">企业客户产品问题类别统计</li>
+		    <li>企业客户产品名称收费情况查询</li>
+		
+		  </ul>
+		  <div class="layui-tab-content">
+		    <div class="layui-tab-item layui-show">
+            <!--表格1-->
+            <div class="layui-col-md-8">
+                <div class="layui-col-md4 layui-col-sm12 layui-col-xs12" >
+                   <table class="layui-table table_css " style="text-align: center;">
+                       <colgroup>
+                           <col width="60">
+                           <col width="120">
+                           <col width="130">
+                           <col width="110">
+                           <col width="80">
+                       </colgroup>
+                       <thead>
+                           <tr>
+                               <th style="text-align: center;">序号</th>
+                               <th style="text-align: center;">客户产品问题类别名称</th>
+                               <th style="text-align: center;">企业客户数量</th>
+                   
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr>
+                               <td>1</td>
+                               <td>问题类别1</td>
+                               <td>50</td>
+                   
+                           </tr>
+                           <tr>
+                               <td>2</td>
+                               <td>问题类别2</td>
+                               <td>36</td>
+                   
+                           </tr>
+                           <tr>
+                               <td>3</td>
+                               <td>问题类别3</td>
+                               <td>50</td>
+                   
+                           </tr>
+                           <tr>
+                               <td>4</td>
+                               <td>问题类别4</td>
+                               <td>20</td>
+                   
+                           </tr>
+                       </tbody>
+                   </table>
+                    <div style="width: 600px;" id="demo5">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!--柱形图1-->
+            <div id="container" class="chart layui-col-md-4"></div>
+		    </div>
+		    <div class="layui-tab-item">
+				<!--表格2-->
+				<div class="layui-col-md-8">
+				    <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+				        <div>个人客户产品问题类别统计:</div>
+				        <table class="layui-table table_css " style="text-align: center;">
+				            <colgroup>
+				                <col width="60">
+				                <col width="120">
+				                <col width="130">
+				                <col width="110">
+				                <col width="80">
+				            </colgroup>
+				            <thead>
+				                <tr>
+				                    <th style="text-align: center;">序号</th>
+				                    <th style="text-align: center;">客户问题类别名称</th>
+				                    <th style="text-align: center;">个人客户数量</th>
+				
+				                </tr>
+				            </thead>
+				           <tbody>
+				               <tr>
+				                   <td>1</td>
+				                   <td>问题类别1</td>
+				                   <td>50</td>
+				       
+				               </tr>
+				               <tr>
+				                   <td>2</td>
+				                   <td>问题类别2</td>
+				                   <td>36</td>
+				       
+				               </tr>
+				               <tr>
+				                   <td>3</td>
+				                   <td>问题类别3</td>
+				                   <td>50</td>
+				       
+				               </tr>
+				               <tr>
+				                   <td>4</td>
+				                   <td>问题类别4</td>
+				                   <td>20</td>
+				       
+				               </tr>
+				           </tbody>
+				        </table>
+				        <div style="width: 600px;" id="demo6">
+				        </div>
+				    </div>
+				
+				
+				</div>
+				
+				<!--柱形图-->
+				<div id="container1" class="chart layui-col-md-4"></div>
+			</div>
+		  </div>
+		</div>
+		
+
+
+
+
+
+
+
+ 
+    </div>
+
+
+
+    <!--分页-->
+    <script>
+        layui.use(['laypage', 'layer'], function () {
+            var laypage = layui.laypage
+                , layer = layui.layer;
+
+
+            //开启HASH
+            laypage.render({
+                elem: 'demo5'
+                , count: 500
+                , curr: location.hash.replace('#!fenye=', '') //获取hash值为fenye的当前页
+                , hash: 'fenye' //自定义hash值
+            });
+            //开启HASH2
+            laypage.render({
+                elem: 'demo6'
+                , count: 500
+                , curr: location.hash.replace('#!fenye=', '') //获取hash值为fenye的当前页
+                , hash: 'fenye' //自定义hash值
+            });
+
+
+            //调用分页
+            laypage.render({
+                elem: 'demo20'
+                , count: data.length
+                , jump: function (obj) {
+                    //模拟渲染
+                    document.getElementById('biuuu_city_list').innerHTML = function () {
+                        var arr = []
+                            , thisData = data.concat().splice(obj.curr * obj.limit - obj.limit, obj.limit);
+                        layui.each(thisData, function (index, item) {
+                            arr.push('<li>' + item + '</li>');
+                        });
+                        return arr.join('');
+                    }();
+                }
+            });
+
+        });
+    </script>
+    <!--饼图1-->
+    <script type="text/javascript">
+        var dom = document.getElementById("container");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            // title: {
+            //     text: '某站点用户访问来源',
+            //     left: 'center'
+            // },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b} : {c} ({d}%)'
+            },
+            legend: {
+                bottom: 0,
+                left: 'center',
+                data: ['其他', '问题1', '问题2', '问题3', '问题4']
+            },
+            series: [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '60%',
+                    center: ['50%', '40%'],
+                    data: [
+                        { value: 335, name: '其他' },
+                        { value: 400, name: '问题1' },
+                        { value: 300, name: '问题2' },
+                        { value: 200, name: '问题3' },
+                        { value: 100, name: '问题4' },
+
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    </script>
+
+        <!--饼图2-->
+        <script type="text/javascript">
+            var dom = document.getElementById("container1");
+            var myChart = echarts.init(dom);
+            var app = {};
+            option = null;
+            option = {
+                // title: {
+                //     text: '某站点用户访问来源',
+                //     left: 'center'
+                // },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} <br/>{b} : {c} ({d}%)'
+                },
+  legend: {
+      bottom: 0,
+      left: 'center',
+      data: ['其他', '问题1', '问题2', '问题3', '问题4']
+  },
+  series: [
+      {
+          name: '访问来源',
+          type: 'pie',
+          radius: '60%',
+          center: ['50%', '40%'],
+          data: [
+              { value: 335, name: '其他' },
+              { value: 400, name: '问题1' },
+              { value: 300, name: '问题2' },
+              { value: 200, name: '问题3' },
+              { value: 100, name: '问题4' },
+ 
+          ],
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            };
+            ;
+            if (option && typeof option === "object") {
+                myChart.setOption(option, true);
+            }
+        </script>
+</body>
+
+</html>

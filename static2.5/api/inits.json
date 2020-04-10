@@ -1,0 +1,121 @@
+{
+  "clearInfo": {
+    "clearUrl": "api/clear.json"
+  },
+  "homeInfo": {
+    "title": "个人中心",
+    "icon": "fa fa-home",
+    "href": "page/个人中心/PersonalInformation.html?mpi=m-p-i-0"
+  },
+  "logoInfo": {
+    "title": "盛源行",
+    "image": "images/logo.png",
+    "href": "Home_page.html"
+  },
+  "menuInfo": {
+    "currency": {
+      "title": "个人中心",
+      "icon": "fa fa-address-book",
+      "child": [
+        {
+          "title": "个人信息",
+          "href": "page/个人中心/PersonalInformation.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
+        {
+          "title": "已有服务",
+          "href": "page/产品服务/产品与服务.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
+        {
+          "title": "发票管理",
+          "href": "",
+          "icon": "fa fa-calendar",
+          "target": "_self",
+          "child": [
+            {
+              "title": "开票信息",
+              "href": "",
+              "icon": "fa fa-calendar",
+              "target": "_self",
+              "child": [
+                {
+                  "title": "发票信息",
+                  "href": "page/发票管理/Invoice_Information.html",
+                  "icon": "fa fa-edit",
+                  "target": "_self"
+                },
+                {
+                  "title": "增票信息",
+                  "href": "page/发票管理/Added_value_information.html",
+                  "icon": "fa fa-file-text",
+                  "target": "_self"
+                }
+              ]
+            },
+            {
+              "title": "申请发票",
+              "href": "page/发票管理/ApplicationInvoice.html",
+              "icon": "fa fa-edit",
+              "target": "_self"
+            },
+            {
+              "title": "发票记录",
+              "href": "page/发票管理/InvoiceRecord.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "增票资质管理",
+              "href": "page/发票管理/ValueAddedInvoiceManagement.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "充值管理",
+          "href": "",
+          "icon": "fa fa-calendar",
+          "target": "_self",
+          "child": [
+            {
+              "title": "充值",
+              "href": "page/充值管理/Recharge.html",
+              "icon": "fa fa-edit",
+              "target": "_self"
+            },
+            {
+              "title": "充值记录",
+              "href": "page/充值管理/RechargeRecord.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "缴费情况",
+          "href": "",
+          "icon": "fa fa-calendar",
+          "target": "_self",
+          "child": [
+            {
+              "title": "项目管理",
+              "href": "page/缴费情况/项目管理.html",
+              "icon": "fa fa-edit",
+              "target": "_self"
+            },
+            {
+              "title": "缴费记录",
+              "href": "page/缴费情况/缴费情况.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

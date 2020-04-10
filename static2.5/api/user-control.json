@@ -1,0 +1,94 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "id": 1,
+      "user": "马化腾 ",
+      "SellerID":"88888888",
+      "password":"12345678",
+	  "personal-mailbox":"123456@qq.com",
+	  "contact-number":"189456789",
+	  "windustry-involved":"IT",
+	  "service-object":"企业",
+	  "Opening-time":"2020-2-17",
+	  "Ostatus":"启用"
+    },
+    {
+      "id": 2,
+      "user": "马化腾 ",
+      "SellerID":"88888888",
+      "password":"12345678",
+	  "personal-mailbox":"123456@qq.com",
+	  "contact-number":"189456789",
+	  "windustry-involved":"IT",
+	  "service-object":"企业",
+	  "Opening-time":"2020-2-17",
+	  "Ostatus":"启用"
+
+    },
+    {
+      "id": 3,
+      "user": "马化腾 ",
+      "SellerID":"88888888",
+      "password":"12345678",
+	  "personal-mailbox":"123456@qq.com",
+	  "contact-number":"189456789",
+	  "windustry-involved":"IT",
+	  "service-object":"企业",
+	  "Opening-time":"2020-2-17",
+	  "Ostatus":"启用"
+
+    },
+    {
+      "id": 4,
+      "user": "马化腾 ",
+      "SellerID":"88888888",
+      "password":"12345678",
+	  "personal-mailbox":"123456@qq.com",
+	  "contact-number":"189456789",
+	  "windustry-involved":"IT",
+	  "service-object":"企业",
+	  "Opening-time":"2020-2-17",
+	  "Ostatus":"停用"
+
+    },
+    {
+      "id": 5,
+      "user": "马化腾 ",
+      "SellerID":"88888888",
+      "password":"12345678",
+	  "personal-mailbox":"123456@qq.com",
+	  "contact-number":"189456789",
+	  "windustry-involved":"IT",
+	  "service-object":"企业",
+	  "Opening-time":"2020-2-17",
+	  "Ostatus":"停用"
+    },
+    {
+      "id": 6,
+      "user": "马化腾 ",
+      "SellerID":"88888888",
+      "password":"12345678",
+	  "personal-mailbox":"123456@qq.com",
+	  "contact-number":"189456789",
+	  "windustry-involved":"IT",
+	  "service-object":"企业",
+	  "Opening-time":"2020-2-17",
+	  "Ostatus":"启用"
+    },
+    {
+      "id": 7,
+      "user": "马化腾 ",
+      "SellerID":"88888888",
+      "password":"12345678",
+	  "personal-mailbox":"123456@qq.com",
+	  "contact-number":"189456789",
+	  "windustry-involved":"IT",
+	  "service-object":"企业",
+	  "Opening-time":"2020-2-17",
+	  "Ostatus":"停用"
+    }
+  ]
+}

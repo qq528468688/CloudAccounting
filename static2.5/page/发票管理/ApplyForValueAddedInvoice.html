@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>增票资质管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="./../../css/public.css" media="all">
+    <link rel="stylesheet" href="./../../js/lay-module/step-lay/step.css" media="all">
+    <link rel="stylesheet" href="./../../lib/jq-module/zyupload/zyupload-1.0.0.min.css" media="all">
+    <!-- //银行卡验证
+    <script src="/js/luhmCheck.js"></script>
+    <script src="/js/bankcard.js"></script>
+    <script src="../lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script> -->
+<style>
+    .layui-input{
+        width: 80%;
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="layuimini-container">
+        <div class="layuimini-main">
+
+            <div class="layui-fluid">
+                <div class="layui-card">
+                    <div class="layui-card-body" style="padding-top: 40px;">
+                        <div class="layui-carousel" id="stepForm" lay-filter="stepForm" style="margin: 0 auto;max-width: 500px;min-width: 50px; padding-left: 40px;">
+                        </form>
+                            <div carousel-item>
+                                <div>
+                                    <form class="layui-form" style="margin: 0 auto;max-width: 460px;padding-top: 40px;">
+
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">客户名称:</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" placeholder="请填写客户名称" class="layui-input"
+                                                    lay-verify="" />
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">注册地址:</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" placeholder="请填写注册地址" class="layui-input"
+                                                    lay-verify="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">电话:</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" placeholder="请填写电话号码" class="layui-input"
+                                                    lay-verify="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">税号:</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" placeholder="请填写税号" class="layui-input"
+                                                    lay-verify="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-form-item">
+                                            <label class="layui-form-label">开户行信息:</label>
+                                            <div class="layui-input-block">
+                                                <input type="text" placeholder="请填写开户行信息" class="layui-input"
+                                                    lay-verify="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-form-item">
+                                            <div class="layui-input-block">
+                                                <button class="layui-btn" lay-submit lay-filter="formStep">
+                                                    &emsp;下一步&emsp;
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div>
+                                    <form class="layui-form" style="margin: 0 auto;max-width: 460px;padding-top: 40px;">
+                                        <div class="layui-form-item">
+                                            <!-- <div class="layui-upload">
+                                                <button type="button" class="layui-btn" id="test2">多图片上传</button> 
+                                                <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;">
+                                                  预览图：
+                                                  <div class="layui-upload-list" id="demo2"></div>
+                                               </blockquote>
+                                              </div> -->
+                                            <div class="layui-upload">
+                                                <button type="button" class="layui-btn layui-btn-normal"
+                                                    id="testList">添加附件</button>
+                                                <div class="layui-upload-list">
+                                                    <table class="layui-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>图片</th>
+                                                                <th>文件名</th>
+                                                                <th>大小</th>
+                                                                <th>状态</th>
+                                                                <th>操作</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="demoList"></tbody>
+                                                    </table>
+                                                </div>
+
+                                                <div class="layui-form-item">
+                                                    <div class="layui-input-block">
+                                                        <button type="button"
+                                                            class="layui-btn layui-btn-primary pre">上一步</button>
+                                                        <button type="button" class="layui-btn"
+                                                            id="testListAction">开始上传</button>
+                                                        <button id="start" class="layui-btn" lay-submit
+                                                            lay-filter="formStep2"
+                                                            font-size="10">&emsp;确认提交&emsp;</button></br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div>
+                                    <div style="text-align: center;margin-top: 90px;">
+                                        <i class="layui-icon layui-circle"
+                                            style="color: white;font-size:30px;font-weight:bold;background: #52C41A;padding: 20px;line-height: 80px;">&#xe605;</i>
+                                        <div style="font-size: 24px;color: #333;font-weight: 500;margin-top: 30px;">
+                                            提交成功
+                                        </div>
+                                        <div style="font-size: 14px;color: #666;margin-top: 20px;">
+                                            提交后工作人员会对客户提交的增票资质信息进行审核,请耐心等待</div>
+                                    </div>
+                                    <div style="text-align: center;margin-top: 30px;">
+                                        <button class="layui-btn next">继续添加</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div style="color: #666;margin-top: 30px;margin-bottom: 40px;padding-left: 30px;">
+                            <h3>温馨提示</h3><br>
+                            <p>上传的文件为营业执照副本电子档和一般纳税人认定表电子档,格式必须为jpg、png图片格式</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="./../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+    <script src="./../../js/lay-config.js?v=1.0.4" charset="utf-8"></script>
+    <script>
+        layui.use(['form', 'step', 'upload', 'layer'], function () {
+            var $ = layui.$,
+                form = layui.form,
+                step = layui.step,
+                upload = layui.upload,
+                layer = layui.layer;
+            step.render({
+                elem: '#stepForm',
+                filter: 'stepForm',
+                width: '100%', //设置容器宽度
+                stepWidth: '100%',
+                height: '530',
+                stepItems: [{
+                    title: '填写信息'
+                }, {
+                    title: '上传文件'
+                }, {
+                    title: '完成'
+                }]
+            });
+
+            //多文件列表示例
+            demoListView = $('#demoList')
+                , uploadListIns = upload.render({
+                    elem: '#testList'
+                    , url: '/images/' //改成您自己的上传接口
+                    , accept: 'file'
+                    , multiple: true
+                    , height: '500px'
+                    , auto: false
+                    , bindAction: '#testListAction'
+                    , choose: function (obj) {
+                        var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+                        //读取本地文件
+                        obj.preview(function (index, file, result) {
+                            console.log(result)
+                            var tr = $(['<tr id="upload-' + index + '">'
+                                , '<td>' + '<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img" style="width:40px">' + '</td>'
+                                , '<td>' + file.name + '</td>'
+                                , '<td>' + (file.size / 1024).toFixed(1) + 'kb</td>'
+                                , '<td><h9>等待上传</h9></td>'
+                                , '<td>'
+                                , '<button class="layui-btn layui-btn-xs demo-reload layui-hide">重传</button>'
+                                , '<button class="layui-btn layui-btn-xs layui-btn-danger demo-delete">删除</button>'
+                                , '</td>'
+                                , '</tr>'].join(''));
+
+                            //单个重传
+                            tr.find('.demo-reload').on('click', function () {
+                                obj.upload(index, file);
+                            });
+
+                            //删除
+                            tr.find('.demo-delete').on('click', function () {
+                                delete files[index]; //删除对应的文件
+                                tr.remove();
+                                uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
+                            });
+
+                            demoListView.append(tr);
+                        });
+                    }
+                    , done: function (res, index, upload) {
+                        if (res.files.file) { //上传成功
+                            var tr = demoListView.find('tr#upload-' + index)
+                                , tds = tr.children();
+                            tds.eq(2).html('<span style="color: #5FB878;">上传成功</span>');
+                            tds.eq(3).html(''); //清空操作
+                            return delete this.files[index]; //删除文件队列已经上传成功的文件
+                        }
+                        this.error(index, upload);
+                    }
+                    , error: function (index, upload) {
+                        var tr = demoListView.find('tr#upload-' + index)
+                            , tds = tr.children();
+                        tds.eq(3).html('<span style="color: #FF5722;">上传失败</span>');
+                        tds.eq(4).find('.demo-reload').removeClass('layui-hide'); //显示重传
+                    }
+                });
+            form.on('submit(formStep)', function (data) {
+
+                step.next('#stepForm');
+                return false;
+            });
+
+            form.on('submit(formStep2)', function (data) {
+                step.next('#stepForm');
+                return false;
+            });
+            // form.on('submit(formStep3)', function () {
+            //     parent.layer.close('formStep2');
+            //     return false;
+            // });
+
+
+            $('.pre').click(function () {
+                step.pre('#stepForm');
+            });
+
+            $('.next').click(function () {
+                step.next('#stepForm');
+            });
+
+        }); 
+    </script>
+</body>
+
+</html>

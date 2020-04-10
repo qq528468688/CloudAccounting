@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>开票信息</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="./../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="./../../lib/layuiadmin/style/admin.css" media="all">
+    <link rel="stylesheet" href="../../lib/xadmin/css/xadmin.css">
+    <script src="https://how2j.cn/study/jquery.min.js"></script>
+    <script type="text/javascript" src="./../../lib/xadmin/js/xadmin.js"></script>
+    <link rel="stylesheet" href="./../../css/public.css" media="all">
+</head>
+
+<body>
+  <div class="layuimini-container">
+    <div class="layuimini-main">
+      <fieldset class="table-search-fieldset">
+        <legend>搜索信息</legend>
+        <div style="margin: 10px 10px 10px 10px">
+          <form class="layui-form layui-form-pane" action="">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                  <div class="layui-input-inline">
+                    <label>
+                      <select name="类别" lay-verify="">
+                        <option value="用户名">用户名</option>
+                        <option value="账户id">账户id</option>
+                        <option value="所属行业">所属行业</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="layui-input-inline">
+                    <input type="text" name="关键字" autocomplete="off" class="layui-input" placeholder="请输入关键字">
+                  </div>
+                </div>
+                <div class="layui-inline">
+                  <button type="submit" class="layui-btn layui-btn-primary" lay-submit lay-filter="data-search-btn"><i
+                      class="layui-icon"></i>查询</button>
+                </div>
+              </div>
+
+            </div>
+
+          </form>
+          </form>
+        </div>
+      </fieldset>
+      <xblock>
+        <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
+        <!-- <button class="layui-btn" onclick="x_admin_show('添加用户','./role-add.html',460,550)"><i
+            class="layui-icon"></i>添加</button> -->
+            <button class="layui-btn  data-add-btn"><i
+              class="layui-icon"></i>添加开票信息</button>
+      </xblock>
+      <table class="layui-hide" id="currentTableId" lay-filter="toolbarDemo">
+        <script type="text/html" id="currentTableBar">
+    <a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">修改</a>
+    <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="del">删除</a>
+
+</script>
+      </table>
+    </div>
+  </div>
+  </div>
+  <script src="./../../lib/layui-v2.5.5/layui.js"></script>
+  <script>
+    layui.use(['form', 'table', 'laydate'], function () {
+      var $ = layui.jquery,
+        form = layui.form,
+        table = layui.table,
+        layuimini = layui.layuimini,
+        laydate = layui.laydate;
+
+
+      //日期时间选择器
+      laydate.render({
+        elem: '#test5'
+        , type: 'datetime'
+      });
+      //监听工具条，导入数据
+      table.render({
+        elem: '#currentTableId',
+        url: './../../api/开票信息/Invoice_Information.json',
+        toolbar: '#toolbarDemo',
+        defaultToolbar: ['filter', 'exports', 'print', {
+          title: '提示',
+          layEvent: 'LAYTABLE_TIPS',
+          icon: 'layui-icon-tips'
+        }],
+        cols: [[
+          { type: "checkbox", align: "center", fixed: "left" },
+          { field: 'id', align: "center",width:80, title: '序号', sort: true },
+          { field: 'name', align: "center", width:300,title: '公司名称' },
+          { field: 'Address', align: "center", width:300, title: '公司地址' },
+          { field: 'phone', align: "center",  title: '公司电话' },
+          { field: 'DutyParagraph', align: "center", title: '税号' },
+          { field: 'CardNumber', align: "center",   title: '银行卡账号' },
+          { field: 'timeend', align: "center",  title: '添加时间' },
+          { title: '操作', align: "center",  templet: '#currentTableBar', fixed: "right", align: "center" }
+        ]],
+        limit: 10,
+        page: true,
+      });
+
+      //监听工具条
+      table.on('tool(toolbarDemo)', function (obj) {
+        var data = obj.data;
+        if (obj.event === 'detail') {
+          layer.msg('ID：' + data.id + ' 的查看操作');
+        } else if (obj.event === 'del') {
+          layer.confirm('真的删除行么', function (index) {
+            obj.del();
+            layer.close(index);
+          });
+        } else if (obj.event === 'edit') {
+          layer.open({
+            type: 2,
+            btn:["返回"],
+            area: ['100%', '100%'],
+            content: 'edit.html' //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+          });
+        }
+      });
+
+      // 监听添加操作
+      $(".data-add-btn").on("click", function () {
+        var index = layer.open({
+          title: '添加',
+          type: 2,
+          shade: 0.2,
+          maxmin: true,
+          btn:["返回"],
+          shadeClose: true,
+          area: ['100%', '100%'],
+          content: 'add.html',
+        });
+        $(window).on("resize", function () {
+          layer.full(index);
+        });
+        return false;
+      });
+      // 监听搜索操作
+      form.on('submit(data-search-btn)', function (data) {
+        var result = JSON.stringify(data.field);
+        layer.alert(result, {
+          title: '最终的搜索信息'
+        });
+
+        //执行搜索重载
+        table.reload('currentTableId', {
+          page: {
+            curr: 1
+          }
+          , where: {
+            searchParams: result
+          }
+        }, 'data');
+
+        return false;
+      });
+      //监听表格复选框选择
+      table.on('checkbox(currentTableFilter)', function (obj) {
+        console.log(obj)
+      });
+
+    });
+    function delAll(argument) {
+
+      var data = tableCheck.getData();
+
+      layer.confirm('确认要删除吗？' + data, function (index) {
+        //捉到所有被选中的，发异步进行删除
+        layer.msg('删除成功', { icon: 1 });
+        $(".layui-form-checked").not('.header').parents('tr').remove();
+      });
+    }
+  </script>
+</body>
+
+</html>

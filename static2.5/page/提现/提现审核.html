@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>提现审核</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+</head>
+
+<body>
+    <div class="layuimini-container">
+        <div class="layuimini-main">
+
+            <fieldset class="table-search-fieldset">
+                <legend>搜索信息</legend>
+                <div style="margin: 10px 10px 10px 10px">
+                    <form class="layui-form layui-form-pane" action="">
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <label class="layui-form-label">申请时间</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="time1" class="layui-input" id="test1"
+                                           placeholder="yyyy-MM-dd">
+                                </div>
+                            </div>
+
+                            <div class="layui-inline">
+                                <label class="layui-form-label" style="font-size: 13px;">金额</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="Money" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-inline">
+                                <button type="submit" class="layui-btn layui-btn-primary" lay-submit
+                                        lay-filter="data-search-btn" style="font-size: 13px;">
+                                    <i class="layui-icon"></i>
+                                    查询
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </fieldset>
+            <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter">
+                <script type="text/html" id="demo1">
+                    <a class="layui-btn layui-btn-xs layui-btn-danger data-count-edit" lay-event="edit">审核</a>
+                    <!-- <a class="layui-btn layui-btn-xs layui-btn-danger data-count-edit " href="">通过</a> -->
+                </script>
+            </table>
+        </div>
+    </div>
+    <script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+    <script src="https://how2j.cn/study/jquery.min.js"></script>
+    <script>layui.use(['form', 'table', 'laydate'], function () {
+            var $ = layui.jquery,
+                form = layui.form,
+                table = layui.table,
+                layuimini = layui.layuimini,
+                laydate = layui.laydate;
+            //中文时间
+            laydate.render({
+                elem: '#test1',
+            });
+
+            table.render({
+                elem: '#currentTableId',
+                url: '../../api/Auditinvoice.json',
+                toolbar: '#currentTableFilter',
+                defaultToolbar: ['filter', 'exports', 'print', {
+                    title: '提示',
+                    layEvent: 'LAYTABLE_TIPS',
+                    icon: 'layui-icon-tips'
+                }],
+                cols: [[
+                    { type: "checkbox", fixed: "left" },
+                    { field: 'id', title: '序号', align: "center", sort: true },
+                    { field: 'User', align: "center", title: '提现用户' },
+                    { field: 'Phone', align: "center", title: '电话' },
+                    { field: 'TheBankAccount', align: "center", title: '银行账号' },
+                    { field: 'Time', title: '申请时间', align: "center", sort: true },
+                    { field: 'State', title: '状态', align: "center", sort: true },
+                    { title: '操作', templet: '#demo1', fixed: "right", align: "center", width: 130 }
+                ]],
+                limit: 15,
+                // page: true
+            });
+
+            // 监听搜索操作
+            form.on('submit(data-search-btn)', function (data) {
+                var result = JSON.stringify(data.field);
+                layer.alert(result, {
+                    title: '最终的搜索信息'
+                });
+
+                //执行搜索重载
+                table.reload('currentTableId', {
+                    page: {
+                        curr: 1
+                    }
+                    , where: {
+                        searchParams: result
+                    }
+                }, 'data');
+
+                return false;
+            });
+
+
+            //监听表格复选框选择
+            table.on('checkbox(currentTableFilter)', function (obj) {
+                console.log(obj)
+            });
+                      //监听工具条
+     table.on('tool(currentTableFilter)', function(obj){
+        layer.open({
+                    type: 2,
+                    title: '审核提现',
+                    area: ['50%', '80%'],
+                    fix: false,
+                    content: '审核.html',
+                    btn:['提交'],
+                    skin: 'layui-layer-molv' ,//样式类名
+                    end: function () {
+                        // dataTable.reloadTable();
+                        window.parent.layer.msg('审核成功')
+                    }
+                });
+        });
+
+            // $("#demo2").on("click", function () {
+            //     layer.open({
+            //         type: 2,
+            //         title: '添加资产',
+            //         area: ['1000px', '680px'],
+            //         fix: false,
+            //         content: 'table2.html',
+            //         end: function () {
+            //             dataTable.reloadTable();
+            //         }
+            //     });
+            // });
+        });</script>
+    <script></script>
+
+</body>
+
+</html>

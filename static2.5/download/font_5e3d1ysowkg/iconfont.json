@@ -1,0 +1,65 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1247125",
+      "name": "建设银行3",
+      "font_class": "jiansheyinhang",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "1616856",
+      "name": "农业银行3",
+      "font_class": "nongyeyinhang",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    },
+    {
+      "icon_id": "2392199",
+      "name": "建设银行2",
+      "font_class": "jiansheyinhang1",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "3555617",
+      "name": "建设银行1",
+      "font_class": "jiansheyinhang2",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "3717390",
+      "name": "邮政银行2",
+      "font_class": "youzhengyinhang",
+      "unicode": "e5fe",
+      "unicode_decimal": 58878
+    },
+    {
+      "icon_id": "3950925",
+      "name": "邮政银行1",
+      "font_class": "youzhengyinhang1",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "4988874",
+      "name": "农业银行2",
+      "font_class": "nongyeyinhang1",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "7505047",
+      "name": "农业银行1",
+      "font_class": "nongyeyinhang2",
+      "unicode": "e699",
+      "unicode_decimal": 59033
+    }
+  ]
+}

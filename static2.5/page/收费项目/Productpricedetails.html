@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+</head>
+<body>
+	
+   
+   
+     <input style="float: right;" type="button" class="layui-btn"  value="返回" onclick="javascript:history.go(-1);"/>    
+      <h3 style="text-align: center;">产品项目类型详情</h3><br />
+	 
+		<table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter" ></table>
+
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <fieldset class="table-search-fieldset">
+			
+        <div class="layui-form" >
+          <table class="layui-table"> 
+            <colgroup>
+              <col width="300">
+              <col minwidth="300">
+             
+            </colgroup>
+            <tbody>
+              <tr>
+                <td align="center">产品项目类型名称</td>
+                <td>服务器</td>
+              </tr>
+			  <tr>
+				  <td align="center">产品名称</td>
+				  <td>云服务器</td>
+			  </tr>
+			  <tr>
+			  				  <td align="center">产品按月价格</td>
+			  				  <td>2000</td>
+			  </tr>
+			  <tr>
+			  				  <td align="center">产品按年价格</td>
+			  				  <td>20000</td>
+			  </tr>
+			  <tr>
+			  				  <td align="center">产品按用户数价格</td>
+			  				  <td>2000</td>
+			  </tr>
+			  <tr>
+			  				  <td align="center">产品按使用次数价格</td>
+			  				  <td>200</td>
+			  </tr>
+            </tbody>
+           
+			
+          </table>
+        </div>
+		</fieldset>
+
+		</div>
+		</div>
+		
+		
+ 
+	
+
+<script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script>
+    layui.use(['form', 'table'], function () {
+        var $ = layui.jquery,
+            form = layui.form,
+            table = layui.table,
+            layuimini = layui.layuimini;
+    });
+</script>
+</body>
+</html>

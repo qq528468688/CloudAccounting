@@ -1,0 +1,44 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 100,
+  "data": [
+    {
+      "id":1,
+      "productid": "145258155",
+      "productname": "游戏后台服务器",
+      "deliver": "saas交付",
+      "startime":"2020-02-18",
+      "endtime": "2020-02-18",
+      "state": "已交付"
+    },
+   {
+     "id":1,
+     "productid": "145258155",
+     "productname": "实名认证接口",
+     "deliver": "api",
+     "startime":"2020-02-18",
+     "endtime": "2020-02-18",
+     "state": "已交付"
+   },{
+      "id":2,
+      "productid": "145258155",
+      "productname": "对接服务",
+      "deliver": "人工交付",
+      "startime":"2020-02-18",
+      "endtime": "2020-02-18",
+      "state": "已交付"
+    },{
+      "id":3,
+      "productid": "145258155",
+      "productname": "资料教程",
+      "deliver": "saas交付",
+      "startime":"2020-02-18",
+      "endtime": "2020-02-18",
+      "state": "已交付"
+    }
+
+        
+    
+  ]
+}

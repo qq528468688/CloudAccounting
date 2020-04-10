@@ -1,0 +1,43 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "id": 1,
+      "name": "admin",
+      "username": "盛源行",
+      "password": "123456",
+      "datetime":"2020-1-16",
+      "number": 5,
+      "eve": "superadmin",
+      "servicecode": "1a15g6b3a1",
+      "interfacepsw": "12346484",
+      "info": "信息详情"
+    },{
+      "id": 2,
+      "name": "system",
+      "username": "系统",
+      "password": "asd6asf5as",
+      "datetime":"2020-1-17",
+      "number": 523,
+      "eve": "system",
+      "servicecode": "as354sdgf3",
+      "interfacepsw": "12346484",
+      "info": "信息详情"
+    },
+    {
+      "id": 3,
+      "name": "root",
+      "username": "王五",
+      "password": "dsa13fds1gd3fg1",
+      "datetime":"2020-1-16",
+      "number": 5,
+      "eve": "admin",
+      "servicecode": "79a5fg55g",
+      "interfacepsw": "12346484",
+      "info": "信息详情"
+    }
+  ]
+
+}

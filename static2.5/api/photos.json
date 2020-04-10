@@ -1,0 +1,20 @@
+{
+    "title": "附件",       
+    "id": 123,           
+    "start": 0,     
+    "data": [       
+      {
+        "alt": "附件1",
+        "pid": 1,         
+        "src": "../../images/1.jpg",
+        "href":"1.html",
+        "thumb": ""      
+      },
+      {
+        "alt": "附件2",
+        "pid": 2,         
+        "src": "../../images/2.jpg",
+        "thumb": ""      
+      }
+    ]
+  }

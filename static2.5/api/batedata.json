@@ -1,0 +1,68 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "id": 1,
+      "country": "中国",
+      "enname": "English name",
+      "number": 111111,
+      "problemtype": "产品问题",
+      "describe": "详细信息描述",
+      "industry": "IT",
+      "profession": "程序员",
+      "channel": "百度推广",
+      "Province": "北京",
+      "problem": "产品存在问题"
+    },{
+      "id": 2,
+      "country": "日本",
+      "enname": "English name",
+      "number": 222222,
+      "problemtype": "服务问题",
+      "describe": "详细信息描述",
+      "industry": "畜牧业",
+      "profession": "养猪人",
+      "channel": "Google推广",
+      "Province": "上海",
+      "problem": "客服未能解决问题"
+    },{
+      "id": 3,
+      "country": "美国",
+      "enname": "English name",
+      "number": 333333,
+      "problemtype": "质量问题",
+      "describe": "详细信息描述",
+      "industry": "餐饮行业",
+      "profession": "厨师",
+      "channel": "品牌广告",
+      "Province": "广州",
+      "problem": "产品存在缺陷"
+    },{
+      "id": 4,
+      "country": "英国",
+      "enname": "English name",
+      "number": 444444,
+      "problemtype": "用户问题",
+        "describe": "详细信息描述",
+      "industry": "制造业",
+      "profession": "技工",
+      "channel": "电视广告",
+      "Province": "深圳",
+      "problem": "产品不会使用"
+    },{
+      "id": 5,
+      "country": "俄罗斯",
+      "enname": "English name",
+      "number": 555555,
+      "problemtype": "其他问题",
+      "describe": "详细信息描述",
+      "industry": "服务业",
+      "profession": "服务员",
+      "channel": "网页广告",
+      "Province": "广西",
+      "problem": "新的问题"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "id": "1",
+      "serviceobj": "企业公司",
+      "customer": "小美",
+      "prduct": "分布式服务器",
+      "price": "1999.99/TB",
+      "number": "1",
+      "state": "正常服务",
+      "orderstate": "已提交",
+      "credential": "98asd89sf5df13as1"
+    }, {
+      "id": "2",
+      "serviceobj": "个体用户",
+      "customer": "张三",
+      "prduct": "个人式服务器",
+      "price": "199.99/月",
+      "number": "1",
+      "state": "正常服务",
+      "orderstate": "已提交",
+      "credential": "a1s6d4asd6f84dg61fb"
+    },{
+      "id": "3",
+      "serviceobj": "企业公司",
+      "customer": "李四",
+      "prduct": "高性能云端处理服务器",
+      "price": "4999.99/tb",
+      "number": "3",
+      "state": "停止服务",
+      "orderstate": "未缴费",
+      "credential": "86a4sd86a7fg4f61d3df1"
+    },{
+      "id": "4",
+      "serviceobj": "大型企业",
+      "customer": "王五",
+      "prduct": "域名解析",
+      "price": "4999.99/年",
+      "number": "1",
+      "state": "正常服务",
+      "orderstate": "已提交",
+      "credential": "asd46gf4dg6131vn8"
+    }
+  ]
+}

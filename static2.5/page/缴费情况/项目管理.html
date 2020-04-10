@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="./../../css/public.css" media="all">
+      <link rel="stylesheet" href="./../../lib/xadmin/css/font.css">
+  <link rel="stylesheet" href="./../../lib/xadmin/css/xadmin.css">
+  <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./../../lib/xadmin/lib/layui/layui.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./../../lib/xadmin/js/xadmin.js"></script>
+</head>
+
+<body>
+    <div class="layuimini-container">
+        <div class="layuimini-main">
+
+            <fieldset class="table-search-fieldset">
+                <legend>搜索信息</legend>
+                <div style="margin: 10px 10px 10px 10px">
+                    <form class="layui-form layui-form-pane" action="">
+                        <div class="layui-form-item">
+                            <div class="layui-input-inline">
+                                <select name="cateid">
+                                  <option>服务对象</option>
+                                  <option>企业</option>
+                                  <option>个人</option>
+                                </select>
+                              </div> 
+                                <div class="layui-input-inline">
+                                    <select name="服务状态">
+                                        <option>服务状态</option>
+                                  <option>正常</option>
+                                  <option>异常</option>
+                                </select>
+                              </div>
+                            
+                            <div class="layui-inline">
+                                <button type="submit" class="layui-btn layui-btn-primary" lay-submit
+                                    lay-filter="data-search-btn" style="font-size: 13px;"><i class="layui-icon"></i>
+                                    查询</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </fieldset>
+            <!-- <xblock>
+                <button type="button" class="layui-btn" id="demo1">
+                    <i class="layui-icon"></i> 返回
+                </button>
+              </xblock> -->
+              <div class="layui-card-body layui-table-body layui-table-main ">
+                <table  class="layui-hide" id="demo" lay-filter="test">
+                <script type="text/html" id="barDemo">
+                    <a class="layui-btn layui-btn-xs layui-btn-danger data-count-edit" lay-event="edit">产品详情</a>
+                </script>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+    <script>
+        layui.use(['form', 'table', 'laydate'], function () {
+            var $ = layui.jquery,
+                form = layui.form,
+                table = layui.table,
+                layuimini = layui.layuimini,
+                laydate = layui.laydate;
+            //中文时间
+            laydate.render({
+                elem: '#test1'
+            });
+            //监听工具条，导入数据
+            table.render({
+                elem: '#demo',
+                url: './../../api/项目.json',
+                toolbar: '#test',
+                defaultToolbar: ['filter', 'exports', 'print', {
+                    title: '提示',
+                    layEvent: 'LAYTABLE_TIPS',
+                    icon: 'layui-icon-tips'
+                }],
+                cols: [[
+                    { type: "checkbox", align: "center", fixed: "left" },
+                    { field: 'id',align: "center",  title: '序号', sort: true },
+                    { field: 'userid',align: "center",  title: '产品名称' },
+                    { field:  'type', align: "center", title: '子产品名称' },
+                    { field: 'wealth',align: "center",  title: '服务状态' },
+                    { field: 'typee',align: "center",  title: '服务对象' },
+                    { field: 'time', align: "center", title: '开始时间', sort: true },
+                    { field: 'end', align: "center", title: '结束时间', sort: true },
+                    { field: 'wealths', align: "center", title: '创建时间', sort: true },
+                    { title: '操作',align: "center",  templet: '#barDemo', fixed: "right", align: "center" }
+                  
+                   
+                 
+        
+                ]],
+                limit: 10,
+                page: true,
+            });
+
+            // 监听搜索操作
+            form.on('submit(data-search-btn)', function (data) {
+                var result = JSON.stringify(data.field);
+                layer.alert(result, {
+                    title: '最终的搜索信息'
+                });
+
+                //执行搜索重载
+                table.reload('currentTableId', {
+                    page: {
+                        curr: 1
+                    }
+                    , where: {
+                        searchParams: result
+                    }
+                }, 'data');
+
+                return false;
+            });
+            //监听表格复选框选择
+            table.on('checkbox(currentTableFilter)', function (obj) {
+                console.log(obj)
+            });
+               //监听工具条
+    table.on('tool(test)', function(obj){
+        layer.open({
+                    type: 2,
+                    title: '详情',
+                    area: ['100%', '100%'],
+                    fix: false,
+                    content: '产品详情.html',
+                    btn:['返回'],
+                    // skin: 'layui-layer-molv' ,//样式类名
+                    end: function () {
+                        // dataTable.reloadTable();
+                        // window.parent.layer.msg('审核成功')
+                    }
+                });
+        });
+        });
+    </script>
+    <script>
+
+    </script>
+
+</body>
+
+</html>

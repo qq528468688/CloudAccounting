@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
+</head>
+<body>
+	
+   
+   
+     <input style="float: right;" type="button" class="layui-btn"  value="返回" onclick="javascript:history.go(-1);"/>    
+      <h3 style="text-align: center;">缴费情况详情</h3><br />
+	 
+		<table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter" ></table>
+
+<div class="layuimini-container">
+    <div class="layuimini-main">
+        <fieldset class="table-search-fieldset">
+			<legend>企业</legend>
+        <div class="layui-form" >
+          <table class="layui-table"> 
+            <colgroup>
+              <col width="300">
+              <col width="350">
+              <col width="300">
+			  <col width="350>"
+            </colgroup>
+            <tbody>
+              <tr>
+                <td align="center">企业名称</td>
+                <td>盛源行</td>
+                <td align="center">所在国家</td>
+                <td>中国</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td align="center">所在省份</td>
+                <td>广西</td>
+                <td align="center">详细地址</td>
+                <td>广西柳州</td>
+              </tr>
+            </tbody>
+			<tbody>
+			  <tr>
+			    <td align="center">联系人</td>
+			    <td>张三</td>
+			    <td align="center">电话</td>
+			    <td>188****1234</td>
+			  </tr>
+			</tbody>
+			<tbody>
+			  <tr>
+			    <td align="center">电子邮件</td>
+			    <td>123456@qq.com</td>
+			    <td align="center">创建日期</td>
+			    <td>2020-1-1</td>
+			  </tr>
+			</tbody>
+			<tbody>
+			  <tr>
+			    <td align="center">是否有效</td>
+			    <td>是</td>
+			    <td align="center"></td>
+			    <td></td>
+			  </tr>
+			</tbody>
+          </table>
+        </div>
+		</fieldset>
+		
+		<fieldset class="table-search-fieldset">
+			<legend>个人</legend>
+		<div class="layui-form" >
+		  <table class="layui-table"> 
+		    <colgroup>
+		      <col width="300">
+		      <col width="350">
+		      <col width="300">
+			  <col width="350>"
+		    </colgroup>
+		    <tbody>
+		      <tr>
+		        <td align="center">用户名称</td>
+		        <td>李四</td>
+		        <td align="center">真实姓名</td>
+		        <td>李小四</td>
+		      </tr>
+		    </tbody>
+		    <tbody>
+		      <tr>
+		        <td align="center">性别</td>
+		        <td>男</td>
+		        <td align="center">出生日期</td>
+		        <td>1995-1-1</td>
+		      </tr>
+		    </tbody>
+			<tbody>
+			  <tr>
+			    <td align="center">国家</td>
+			    <td>中国</td>
+			    <td align="center">省份</td>
+			    <td>广西</td>
+			  </tr>
+			</tbody>
+			<tbody>
+			  <tr>
+			    <td align="center">身份证号</td>
+			    <td>450924******1234</td>
+			    <td align="center">手机号码</td>
+			    <td>188****1234</td>
+			  </tr>
+			</tbody>
+			<tbody>
+			  <tr>
+			    <td align="center">电子邮件</td>
+			    <td>123456@qq.com</td>
+			    <td align="center">职业</td>
+			    <td>工人</td>
+			  </tr>
+			</tbody>
+			<tbody>
+			  <tr>
+			    <td align="center">创建日期</td>
+			    <td>2020-1-1</td>
+			    <td align="center">是否有效</td>
+			    <td>是</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</div>
+		</fieldset>
+		
+		<fieldset class="table-search-fieldset">
+			<legend>缴费信息</legend>
+		<div class="layui-form" >
+		  <table class="layui-table"> 
+		    <colgroup>
+		      <col width="300">
+		      <col width="350">
+		      <col width="300">
+			  <col width="350>"
+		    </colgroup>
+		    <tbody>
+		      <tr>
+		        <td align="center">服务对象</td>
+		        <td>企业</td>
+		        <td align="center">收费项目</td>
+		        <td>服务器</td>
+		      </tr>
+		    </tbody>
+		    <tbody>
+		      <tr>
+		        <td align="center">收费产品</td>
+		        <td>云服务器</td>
+		        <td align="center">收费价格</td>
+		        <td>1000</td>
+		      </tr>
+		    </tbody>
+			<tbody>
+			  <tr>
+			    <td align="center">收费数量</td>
+			    <td>10</td>
+			    <td align="center">缴费总额</td>
+			    <td>10000</td>
+			  </tr>
+			</tbody>
+			<tbody>
+			  <tr>
+			    <td align="center">服务开始时间</td>
+			    <td>2020-1-1</td>
+			    <td align="center">服务结束时间</td>
+			    <td>2021-1-1</td>
+			  </tr>
+			</tbody>
+			<tbody>
+			  <tr>
+			    <td align="center">服务状态</td>
+			    <td>正常</td>
+			    <td align="center"></td>
+			    <td></td>
+			  </tr>
+			</tbody>
+			
+		  </table>
+		</div>
+		</fieldset>
+		
+		</div>
+		</div>
+		
+		
+ 
+	
+
+<script src="../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script>
+    layui.use(['form', 'table'], function () {
+        var $ = layui.jquery,
+            form = layui.form,
+            table = layui.table,
+            layuimini = layui.layuimini;
+    });
+</script>
+</body>
+</html>

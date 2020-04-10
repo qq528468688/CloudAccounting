@@ -1,0 +1,87 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 1000,
+  "data": [
+    {
+      "id": 1,
+      "parent-permission-name": "用户管理",
+      "permission-name":"删除用户",
+      "binding-url":"/user/delete",
+	  "permission-type":"菜单",
+	  "permission-describe":"管理用户",
+	  "whether-valid":"有效",
+	  "creation-time":"2020-12-10",
+	  "modification-time":"2020-2-17"
+    },
+    {
+      "id": 2,
+      "parent-permission-name": "用户管理",
+      "permission-name":"删除用户",
+      "binding-url":"/user/delete",
+	  "permission-type":"菜单",
+	  "permission-describe":"管理用户",
+	  "whether-valid":"有效",
+	  "creation-time":"2020-12-10",
+	  "modification-time":"2020-2-17"
+
+    },
+    {
+      "id": 3,
+      "parent-permission-name": "用户管理",
+      "permission-name":"删除用户",
+      "binding-url":"/user/delete",
+	  "permission-type":"菜单",
+	  "permission-describe":"管理用户",
+	  "whether-valid":"有效",
+	  "creation-time":"2020-12-10",
+	  "modification-time":"2020-2-17"
+
+    },
+    {
+      "id": 4,
+      "parent-permission-name": "用户管理",
+      "permission-name":"删除用户",
+      "binding-url":"/user/delete",
+	  "permission-type":"菜单",
+	  "permission-describe":"管理用户",
+	  "whether-valid":"无效",
+	  "creation-time":"2020-2-10",
+	  "modification-time":"2020-2-17"
+
+    },
+    {
+      "id": 5,
+      "parent-permission-name": "用户管理",
+      "permission-name":"删除用户",
+      "binding-url":"/user/delete",
+	  "permission-type":"菜单",
+	  "permission-describe":"管理用户",
+	  "whether-valid":"无效",
+	  "creation-time":"2020-2-10",
+	  "modification-time":"2020-2-17"
+    },
+    {
+      "id": 6,
+      "parent-permission-name": "用户管理",
+      "permission-name":"删除用户",
+      "binding-url":"/user/delete",
+	  "permission-type":"菜单",
+	  "permission-describe":"管理用户",
+	  "whether-valid":"有效",
+	  "creation-time":"2020-12-10",
+	  "modification-time":"2020-2-17"
+    },
+    {
+      "id": 7,
+      "parent-permission-name": "用户管理",
+      "permission-name":"删除用户",
+      "binding-url":"/user/delete",
+	  "permission-type":"菜单",
+	  "permission-describe":"管理用户",
+	  "whether-valid":"无效",
+	  "creation-time":"2020-2-10",
+	  "modification-time":"2020-2-17"
+    }
+  ]
+}

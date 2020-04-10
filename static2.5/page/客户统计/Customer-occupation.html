@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人客户职业统计</title>
+  <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../lib/layui-v2.5.5/css/layui.mobile.css" media="all">
+
+
+  <script src="../../lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+  <script src="../../lib/layui-v2.5.5/layui.all.js" charset="utf-8"></script>
+ <script src="../../lib/layui-v2.5.5/echarts.min.js" charset="utf-8"></script>
+   
+	<style>
+        .body_top {
+            margin-top: 5%;
+            width: 100%;
+            background-color:white;
+        }
+
+
+
+        .table_css {
+            width: 600px;
+
+
+        }
+
+        .chart {
+            height: 300px;
+            width: 400px;
+            float: right;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!--内容部分-->
+    <div class="layui-container">
+		
+		<div class="layui-tab">
+		  <ul class="layui-tab-title ">
+		    <li class="layui-this">个人客户行业统计</li>
+		    <li>个人客户职业统计</li>
+		
+		  </ul>
+		  <div class="layui-tab-content" >
+		    <div class="layui-tab-item layui-show" >
+
+           <!--表格1-->
+            <div class="layui-col-md-8" >
+                <div class="layui-col-md4 layui-col-sm12 layui-col-xs12" >
+
+                   <table class="layui-table table_css " style="text-align: center;">
+                       <colgroup>
+                           <col width="60">
+                           <col width="120">
+                           <col width="130">
+                           <col width="110">
+                           <col width="80">
+                       </colgroup>
+                       <thead>
+                           <tr>
+                               <th style="text-align: center;">序号</th>
+                               <th style="text-align: center;">行业名称</th>
+                               <th style="text-align: center;">个人客户数量</th>
+                   
+                           </tr>
+                       </thead>
+                     <tbody>
+                           <tr>
+                               <td>1</td>
+                               <td>软件工程</td>
+                               <td>9897</td>
+                   
+                           </tr>
+                           <tr>
+                               <td>2</td>
+                               <td>金融学</td>
+                               <td>2365</td>
+                   
+                           </tr>
+                           <tr>
+                               <td>3</td>
+                               <td>计算机科学与技术</td>
+                               <td>6531</td>
+                   
+                           </tr>
+                           <tr>
+                               <td>4</td>
+                               <td>电子科学与技术</td>
+                               <td>4532</td>
+                   
+                           </tr>
+                       </tbody>
+                   </table>
+				   
+                    <div style="width: 600px;" id="demo5">
+                    </div>
+					</div>
+
+
+            <!--扇形图1-->
+            <div id="container" class="chart layui-col-md-4 layui-col-md-offset2" ></div>
+            </div>
+		    </div>
+			
+			
+		    <div class="layui-tab-item">
+			<!--表格2-->
+			    <div class="layui-col-md-8">
+			        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12" >
+
+			            <table class="layui-table table_css " style="text-align: center;">
+			                <colgroup>
+			                    <col width="60">
+			                    <col width="120">
+			                    <col width="130">
+			                    <col width="110">
+			                    <col width="80">
+			                </colgroup>
+			                <thead>
+			                    <tr>
+			                        <th style="text-align: center;">序号</th>
+			                        <th style="text-align: center;">职业名称</th>
+			                        <th style="text-align: center;">个人客户数量</th>
+			
+			                    </tr>
+			                </thead>
+			                <tbody>
+			                    <tr>
+			                        <td>1</td>
+			                        <td>软件开发</td>
+			                        <td>6789</td>
+			
+			                    </tr>
+			                    <tr>
+			                        <td>2</td>
+			                        <td>程序测试</td>
+			                        <td>1235</td>
+			
+			                    </tr>
+			                    <tr>
+			                        <td>3</td>
+			                        <td>系统分析</td>
+			                        <td>2543</td>
+			
+			                    </tr>
+			                    <tr>
+			                        <td>4</td>
+			                        <td>硬件测试工程师</td>
+			                        <td>1245</td>
+			
+			                    </tr>
+			                </tbody>
+			            </table>
+			            <div style="width: 600px;" id="demo6">
+			            </div>
+			        </div>
+			
+			
+			    </div>
+			
+			         <!--扇形图1-->
+			    <div id="container1" class="chart layui-col-md-4"></div>
+			
+			</div>
+			</div>
+		  </div>
+		</div>
+
+
+
+
+
+
+
+
+
+    <!--选项卡-->
+	<script>
+	layui.use('element', function(){
+	  var $ = layui.jquery
+	  ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+	  
+	  //触发事件
+	  var active = {
+	    tabAdd: function(){
+	      //新增一个Tab项
+	      element.tabAdd('demo', {
+	        title: '新选项'+ (Math.random()*1000|0) //用于演示
+	        ,content: '内容'+ (Math.random()*1000|0)
+	        ,id: new Date().getTime() //实际使用一般是规定好的id，这里以时间戳模拟下
+	      })
+	    }
+	    ,tabDelete: function(othis){
+	      //删除指定Tab项
+	      element.tabDelete('demo', '44'); //删除：“商品管理”
+	      
+	      
+	      othis.addClass('layui-btn-disabled');
+	    }
+	    ,tabChange: function(){
+	      //切换到指定Tab项
+	      element.tabChange('demo', '22'); //切换到：用户管理
+	    }
+	  };
+	  
+	  $('.site-demo-active').on('click', function(){
+	    var othis = $(this), type = othis.data('type');
+	    active[type] ? active[type].call(this, othis) : '';
+	  });
+	  
+	  //Hash地址的定位
+	  var layid = location.hash.replace(/^#test=/, '');
+	  element.tabChange('test', layid);
+	  
+	  element.on('tab(test)', function(elem){
+	    location.hash = 'test='+ $(this).attr('lay-id');
+	  });
+	  
+	});
+	</script>
+    <!--分页-->
+    <script>
+        layui.use(['laypage', 'layer'], function () {
+            var laypage = layui.laypage
+                , layer = layui.layer;
+
+
+            //开启HASH
+            laypage.render({
+                elem: 'demo5'
+                , count: 500
+                , curr: location.hash.replace('#!fenye=', '') //获取hash值为fenye的当前页
+                , hash: 'fenye' //自定义hash值
+            });
+            //开启HASH2
+            laypage.render({
+                elem: 'demo6'
+                , count: 500
+                , curr: location.hash.replace('#!fenye=', '') //获取hash值为fenye的当前页
+                , hash: 'fenye' //自定义hash值
+            });
+
+
+            //调用分页
+            laypage.render({
+                elem: 'demo20'
+                , count: data.length
+                , jump: function (obj) {
+                    //模拟渲染
+                    document.getElementById('biuuu_city_list').innerHTML = function () {
+                        var arr = []
+                            , thisData = data.concat().splice(obj.curr * obj.limit - obj.limit, obj.limit);
+                        layui.each(thisData, function (index, item) {
+                            arr.push('<li>' + item + '</li>');
+                        });
+                        return arr.join('');
+                    }();
+                }
+            });
+
+        });
+    </script>
+    <!--饼图1-->
+    <script type="text/javascript">
+        var dom = document.getElementById("container");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            // title: {
+            //     text: '某站点用户访问来源',
+            //     left: 'center'
+            // },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b} : {c} ({d}%)'
+            },
+            legend: {
+                bottom: 0,
+                left: 'center',
+                data: ['其他', '软件工程', '金融学', '计算机科学与技术', '电子科学与技术']
+            },
+            series: [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '60%',
+                    center: ['50%', '40%'],
+                    data: [
+                        { value: 4531, name: '其他' },
+                        { value: 9897, name: '软件工程' },
+                        { value: 2365, name: '计算机科学与技术' },
+                        { value: 6534, name: '金融学' },
+                        { value: 4532, name: '电子科学与技术' },
+
+                    ],
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    </script>
+
+        <!--饼图2-->
+        <script type="text/javascript">
+            var dom = document.getElementById("container1");
+            var myChart = echarts.init(dom);
+            var app = {};
+            option = null;
+            option = {
+                // title: {
+                //     text: '某站点用户访问来源',
+                //     left: 'center'
+                // },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: '{a} <br/>{b} : {c} ({d}%)'
+                },
+                legend: {
+                    bottom: 0,
+                    left: 'center',
+                    data: ['其他', '软件开发', '程序测试', '系统分析', '硬件测试工程师']
+                },
+                series: [
+                    {
+                        name: '访问来源',
+                        type: 'pie',
+                        radius: '60%',
+                        center: ['50%', '40%'],
+                        data: [
+                            { value: 335, name: '其他' },
+                            { value: 400, name: '软件开发' },
+                            { value: 300, name: '程序测试' },
+                            { value: 200, name: '系统分析' },
+                            { value: 100, name: '硬件测试工程师' },
+
+                        ],
+                        emphasis: {
+                            itemStyle: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            };
+            ;
+            if (option && typeof option === "object") {
+                myChart.setOption(option, true);
+            }
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>充值</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="./../../lib/layui-v2.5.5/css/layui.css" media="all">
+	<link rel="stylesheet" type="text/css" href="./../../css/main.css" />
+	<script src="./../../download/font_5e3d1ysowkg/iconfont.js"></script>
+	<script src="./../../download/font_8cqav6ba93r/iconfont.js"></script>
+	<script type='text/javascript' src='http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js'></script>
+	<script type="text/javascript" src="http://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+</head>
+<style>
+	.icon {
+		width: 1em;
+		height: 1em;
+		vertical-align: -0.15em;
+		fill: currentColor;
+		overflow: hidden;
+	}
+
+	.a {
+		font-size: 10px;
+	}
+
+	.bank-list {
+		float: right;
+		width: 520px;
+	}
+</style>
+
+<body>
+	<div class="">
+		<a style="right: 200px;" href="RechargeRecord.html" class="layui-btn layui-btn-primary"> 充值记录</a>
+	</div>
+	<div class="layui-fluid">
+		<div class="layui-row layui-col-space15">
+			<div class="layui-col-md12">
+				<div class="layui-card">
+					<div class="layui-fluid" style="height:550px;">
+						<div class="pay">
+							<!--主内容开始编辑-->
+							<form action="" class="am-form" id="doc-vld-msg">
+								<div class="tr_rechli am-form-group">
+									<ul class="ui-choose am-form-group" id="uc_01">
+										<li>
+											<label class="am-radio-inline">
+												<input type="radio" value="" name="docVlGender" required
+													data-validation-message="请选择一项充值额度"> 50￥
+											</label>
+										</li>
+										<li>
+											<label class="am-radio-inline">
+												<input type="radio" name="docVlGender"
+													data-validation-message="请选择一项充值额度"> 100￥
+											</label>
+										</li>
+										<li>
+											<label class="am-radio-inline">
+												<input type="radio" name="docVlGender"
+													data-validation-message="请选择一项充值额度"> 200￥
+											</label>
+										</li>
+
+										<li>
+											<label class="am-radio-inline">
+												<input type="radio" name="docVlGender"
+													data-validation-message="请选择一项充值额度"> 300￥
+											</label>
+										</li>
+										<li>
+											<label class="am-radio-inline">
+												<input type="radio" name="docVlGender"
+													data-validation-message="请选择一项充值额度"> 400￥
+											</label>
+										</li>
+										<li>
+											<label class="am-radio-inline">
+												<input type="radio" name="docVlGender"
+													data-validation-message="请选择一项充值额度"> 500￥
+											</label>
+										</li>
+										<li>
+											<label class="am-radio-inline">
+												<input type="radio" name="docVlGender"
+													data-validation-message="请选择一项充值额度">600￥
+											</label>
+										</li>
+										<li>
+											<label class="am-radio-inline">
+												<input type="radio" name="docVlGender"
+													data-validation-message="请选择一项充值额度"> 其他金额
+											</label>
+										</li>
+
+									</ul>
+								</div>
+								<div class="tr_rechoth am-form-group">
+									<span>其他金额：</span>
+									<input type="number" min="10" max="10000" value="10.00元" class="othbox"
+										data-validation-message="充值金额范围：10-10000元" />
+									<!--<p>充值金额范围：10-10000元</p>-->
+								</div>
+								<!--充值方式开始-->>
+								<div class="td_rechcho tr_rechli am-form-group " style="width: 600px;">
+									<span>充值方式：</span>
+									<ul class="ui-choose am-form-group" id="uc_02">
+										<li style="height: 15px;padding: 0px 0px 25px;line-height: 42px;">
+											<label class="am-radio-inline">
+												<input type="radio" name="docVlGender" title="微信支付">
+												<svg class="icon" aria-hidden="true">
+													<use xlink:href="#icon-weixin"></use>
+												</svg>
+												<a>微信支付</a>
+											</label>
+										</li>
+										<li style="height: 15px;padding: 0px 0px 25px;line-height: 42px;">
+											<label class="am-radio-inline">
+												<input type="radio" name="docVlGender" title="支付宝支付">
+												<svg class="icon" aria-hidden="true">
+													<use xlink:href="#icon-zhifubaozhifu"></use>
+												</svg>
+												<a>支付宝支付</a>
+											</label>
+										</li>
+										<li style="height: 15px;padding: 0px 0px 25px;line-height: 42px;">
+											<label class="am-radio-inline">
+												<input type="radio" name="docVlGender" title="银联支付">
+												<svg class="icon" aria-hidden="true">
+													<use xlink:href="#icon-yinlian"></use>
+												</svg>
+												<a>银联支付</a>
+											</label>
+										</li>
+									</ul>
+								</div>
+								<!--充值方式结束-->
+								<!--选择银行开始-->
+								<div class="td_rechoth tr_rechcho tr_rechli am-form-group">
+									<span>选择银行</span>
+									<!-- 上右下左	padding 内边距 -->
+									<div class="bank-list">
+										<ul class="ui-choose am-form-group" id="uc_02">
+											<li style="height: 15px;padding: 0px 0px 20px; margin-top: 5px;">
+												<label class="am-radio-inlines" style="width: 100px;"
+													data-validation-message="请选择银行">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="#icon-nongyeyinhang1"></use>
+													</svg>
+													<a>农业银行</a>
+												</label>
+											<li style="height: 15px;padding: 0px 0px 20px; margin-top: 5px;">
+												<label class="am-radio-inlines" style="width: 100px;"
+													data-validation-message="请选择银行">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="#icon-youzhengyinhang"></use>
+													</svg>
+													<a>邮政银行</a>
+												</label>
+											</li>
+											<li style="height: 15px;padding: 0px 0px 20px; margin-top: 5px;">
+												<label class="am-radio-inlines" style="width: 100px;"
+													data-validation-message="请选择银行">
+													<svg class="icon" aria-hidden="true">
+														<use xlink:href="#icon-jiansheyinhang"></use>
+													</svg>
+													<a>建设银行</a>
+												</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!--选择银行结束-->
+								<div class="tr_rechnum">
+									<span>应付金额：</span>
+									<p class="rechnum">0.00元</p>
+								</div>
+						</div>
+						<!--确认支付-->
+						<div class=" td_rechoth" style="text-align: center;">
+							<input type="submit" value="确认支付" class="layui-btn layui-btn-primary" />
+						</div>
+						<!--确认支付-->
+						<!--二维码-->
+						<div class="th_rechoth td_rechcho" id="qrcode" style="text-align: center; padding-top: -50px;">
+
+							<script>
+								$("#qrcode").qrcode({
+									width: 80,
+									height: 80,
+									text: "https://www.baidu.com/"
+								})
+
+							</script>
+							<h3>请用微信扫描</h3>
+							<h3 style="text-align: center;">扫描二维码支付</h3>
+
+						</div>
+						<div class="tl_rechoth" id="qrcode1" style="text-align: center;">
+
+							<script style="padding-top: 10px;">
+								$("#qrcode1").qrcode({
+									width: 80,
+									height: 80,
+									text: "https://www.baidu.com/"
+								})
+
+							</script>
+							<h3>请用支付宝扫描</h3>
+							<h3 style="text-align: center;">扫描二维码支付</h3>
+						</div>
+							<!--二维码-->
+					</div>
+				</div>
+				</form>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="./../../js/jquery.min.js"></script>
+		<script src="./../../lib/layuiadmin/layui/layui.js"></script>
+		<script type="text/javascript" src="./../../js/ui-choose.js"></script>
+		<script type="text/javascript">
+			// 将所有.ui-choose实例化
+			$('.ui-choose').ui_choose();
+			// uc_01 ul 单选
+			var uc_01 = $('#uc_01').data('ui-choose'); // 取回已实例化的对象
+			uc_01.click = function (index, item) {
+				console.log('click', index, item.text())
+			}
+			uc_01.change = function (index, item) {
+				console.log('change', index, item.text())
+			}
+			$(function () {
+				$('#uc_01 li:eq(7)').click(function () {
+					$('.tr_rechoth').show();
+					$('.tr_rechoth').find("input").attr('required', 'true')
+					$('.rechnum').text('10元');
+				})
+
+
+				$('#uc_01 li:eq(6)').click(function () {
+					$('.tr_rechoth').hide();
+					$('.rechnum').text('600.00元');
+					$('.othbox').val('');
+				})
+				$('#uc_01 li:eq(5)').click(function () {
+					$('.tr_rechoth').hide();
+					$('.rechnum').text('500.00元');
+					$('.othbox').val('');
+				})
+				$('#uc_01 li:eq(4)').click(function () {
+					$('.tr_rechoth').hide();
+					$('.rechnum').text('400.00元');
+					$('.othbox').val('');
+				})
+				$('#uc_01 li:eq(3)').click(function () {
+					$('.tr_rechoth').hide();
+					$('.rechnum').text('300.00元');
+					$('.othbox').val('');
+				})
+				$('#uc_01 li:eq(2)').click(function () {
+					$('.tr_rechoth').hide();
+					$('.rechnum').text('200.00元');
+					$('.othbox').val('');
+				})
+				$('#uc_01 li:eq(1)').click(function () {
+					$('.tr_rechoth').hide();
+					$('.rechnum').text('100.00元');
+					$('.othbox').val('');
+				})
+				$('#uc_01 li:eq(0)').click(function () {
+					$('.tr_rechoth').hide();
+					$('.rechnum').text('50.00元');
+					$('.othbox').val('');
+				})
+				$(document).ready(function () {
+					$('.othbox').on('input propertychange', function () {
+						var num = $(this).val();
+						$('.rechnum').html(num + ".00元");
+					});
+				});
+
+			});
+			// 将所有.ui-choose实例化
+			$('.ui-choose').ui_choose();
+			// uc_01 u2 单选
+			var uc_02 = $('#uc_02').data('ui-choose'); // 取回已实例化的对象
+			uc_02.click = function (index, item) {
+				console.log('click', index, item.text())
+			}
+			uc_02.change = function (index, item) {
+				console.log('change', index, item.text())
+			}
+			$(function () {
+				$('#uc_02 li:eq(0)').click(function () {
+					$('.th_rechoth').show(); //show展示
+					$('.td_rechoth').hide(); //hide不展示
+					$('.tl_rechoth').hide(); //hide不展示
+					// $('.rechnum').text('10元');
+				})
+				$('#uc_02 li:eq(1)').click(function () {
+					$('.tl_rechoth').show(); //show展示
+					$('.td_rechoth').hide(); //hide不展示
+					$('.th_rechoth').hide(); //hide不展示
+					// $('.rechnum').text('10元');
+				})
+				$('#uc_02 li:eq(2)').click(function () {
+					$('.td_rechoth').show(); //show展示
+					$('.th_rechoth').hide(); //hide不展示
+					$('.tl_rechoth').hide(); //hide不展示
+				})
+
+			})
+
+
+			$(function () {
+				$('#doc-vld-msg').validator({
+					onValid: function (validity) {
+						$(validity.field).closest('.am-form-group').find('.am-alert').hide();
+					},
+					onInValid: function (validity) {
+						var $field = $(validity.field);
+						var $group = $field.closest('.am-form-group');
+						var $alert = $group.find('.am-alert');
+						// 使用自定义的提示信息 或 插件内置的提示信息
+						var msg = $field.data('validationMessage') || this.getValidationMessage(validity);
+
+						if (!$alert.length) {
+							$alert = $('<div class="am-alert am-alert-danger"></div>').hide().
+								appendTo($group);
+						}
+						$alert.html(msg).show();
+					}
+				});
+			});
+
+		</script>
+	</div>
+	</div>
+	</div>
+
+	<script src="./../../lib/layui-v2.5.5/layui.js"></script>
+
+</body>
+
+</html>

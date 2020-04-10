@@ -1,0 +1,68 @@
+{
+    "code": 0,
+    "msg": "",
+    "data": [
+      {
+        "id":1,
+        "consumptiontype": "云服务器",
+        "InvoiceType": "电子发票",
+        "CompanyName":"SYH",
+        "Address":"SYH",
+        "Phone":"12345678999",
+        "Ein":"564654654",
+        "TheBankAccount":"113456789",
+        "Time":"2020-1-12",
+        "Money":"320",
+        "State":"未审核"
+        
+        
+      },
+      {
+        "id":2,
+        "consumptiontype": "云数据库",
+        "InvoiceType": "电子发票",
+        "CompanyName":"CQ",
+        "Address":"SYH",
+        "Phone":"12345678999",
+        "Ein":"564654654",
+        "TheBankAccount":"113456789",
+        "Time":"2020-1-10",
+        "Money":"3000",
+        "State":"未审核"
+        
+        
+      },
+      {
+        "id":3,
+        "consumptiontype": "人脸核身-云智慧眼",
+        "InvoiceType": "纸质发票",
+        "CompanyName":"SYH",
+        "Address":"SYH",
+        "Phone":"12345678999",
+        "Ein":"564654654",
+        "TheBankAccount":"113456789",
+        "Time":"2020-1-05",
+        "Money":"660000",
+        "State":"未审核"
+        
+        
+      },
+      {
+        "id":4,
+        "consumptiontype": "宙斯盾安全防护",
+        "InvoiceType": "纸质发票",
+        "CompanyName":"CQ",
+        "Address":"SYH",
+        "Phone":"12345678999",
+        "Ein":"564654654",
+        "TheBankAccount":"113456789",
+        "Time":"2020-1-20",
+        "Money":"286600",
+        "State":"未审核"
+        
+        
+      }
+
+      
+    ]
+  }

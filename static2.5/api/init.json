@@ -1,0 +1,392 @@
+{
+  "clearInfo": {
+    "clearUrl": "api/clear.json"
+  },
+  "homeInfo": {
+    "title": "管理员信息",
+    "icon": "fa fa-home",
+    "href": "page/管理员信息/管理员信息.html?mpi=m-p-i-0"
+  },
+  "logoInfo": {
+    "title": "盛源行",
+    "image": "images/logo.png",
+    "href": "Home_page.html"
+  },
+  "menuInfo": {
+    "currency": {
+      "title": "后台管理",
+      "icon": "fa fa-address-book",
+      "child": [
+        {
+          "title": "管理员信息",
+          "href": "page/管理员信息/管理员信息.html",
+          "icon": "fa fa-gears",
+          "target": "_self"
+        },
+        {
+          "title": "登陆注册重置",
+          "href": "",
+          "icon": "fa fa-gears",
+          "target": "_self",
+          "child": [
+            {
+              "title": "登陆",
+              "href": "page/登陆注册重置/login.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "注册",
+              "href": "page/登陆注册重置/reg.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "重置",
+              "href": "page/登陆注册重置/forget.html",
+              "icon": "fa fa-calendar",
+              "target": "_self"
+            },
+            {
+              "title": "重置密码",
+              "href": "page/登陆注册重置/resetpass.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "用户权限管理",
+          "href": "",
+          "icon": "fa fa-window-maximize",
+          "target": "",
+          "child": [
+            {
+              "title": "权限管理",
+              "href": "page/权限管理/backstage-authority-management.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "用户管理",
+              "href": "page/后台用户管理/后台用户.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "信息发布管理",
+          "href": "",
+          "icon": "fa fa-window-maximize",
+          "target": "",
+          "child": [
+            {
+              "title": "公告管理",
+              "href": "page/公告/list.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "优惠管理",
+              "href": "page/优惠管理/preferential.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "提现管理",
+          "href": "page/提现/提现审核.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
+        {
+          "title": "系统参数管理",
+          "href": "",
+          "icon": "fa fa-file-text",
+          "target": "_self",
+          "child": [
+            {
+              "title": "国家参数",
+              "href": "page/parametermanagement/国家参数.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "省份参数",
+              "href": "page/parametermanagement/省份参数.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "行业参数",
+              "href": "page/parametermanagement/行业参数.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "职业参数",
+              "href": "page/parametermanagement/职业参数.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "推广渠道",
+              "href": "page/parametermanagement/推广渠道.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "产品问题类",
+              "href": "page/parametermanagement/产品问题类型.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "产品问题",
+              "href": "page/parametermanagement/产品问题.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            }
+            
+            
+          ]
+        },
+        {
+          "title": "系统信息设置",
+          "href": "",
+          "icon": "fa fa-gears",
+          "target": "_self",
+          "child": [
+            {
+              "title": "接口服务账户",
+              "href": "page/systemmanagement/接口服务账户.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "角色管理",
+              "href": "page/systemmanagement/角色管理.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "系统信息设置",
+              "href": "page/systemmanagement/系统信息设置.html",
+              "icon": "fa fa-calendar",
+              "target": "_self"
+            },
+            {
+              "title": "系统管理操作日志",
+              "href": "page/systemmanagement/系统操作日志.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "系统自动操作日志",
+              "href": "page/systemmanagement/系统自动操作日志.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "缴费信息",
+          "href": "page/payinfo/缴费信息.html",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
+        {
+          "title": "客户统计",
+          "href": "",
+          "icon": "fa fa-home",
+          "target": "_self",
+          "child": [
+            {
+              "title": "客户地理分布统计",
+              "href": "page/客户统计/geographical-distribution.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "客户行业统计",
+              "href": "page/客户统计/industry.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "个人客户职业统计",
+              "href": "page/客户统计/Customer-occupation.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "客户收费项目统计",
+              "href": "page/客户统计/Pay-Service.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "客户收费产品统计",
+              "href": "page/客户统计/Products-used.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "客户产品渠道统计",
+              "href": "page/客户统计/Product-channel.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "客户产品问题统计",
+              "href": "page/客户统计/Product-problem.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            },
+            {
+              "title": "客户产品问题类别统计",
+              "href": "page/客户统计/Product-problem-category.html",
+              "icon": "fa fa-tachometer",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "收费情况",
+          "href": "",
+          "icon": "fa fa-window-maximize",
+          "target": "",
+          "child": [
+            {
+              "title": "缴费信息",
+              "href": "page/收费情况/Payment information.html",
+              "icon": "fa fa-snowflake-o",
+              "target": "_self"
+            },
+            {
+              "title": "缴费情况",
+              "href": "page/收费情况/Payment information.html",
+              "icon": "fa fa-snowflake-o",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "收费项目",
+          "href": "",
+          "icon": "fa fa-window-maximize",
+          "target": "",
+          "child": [
+            {
+              "title": "产品项目类型",
+              "href": "page/收费项目/Producttype.html",
+              "icon": "fa fa-snowflake-o",
+              "target": "_self"
+            },
+            {
+              "title": "产品价格信息",
+              "href": "page/收费项目/Productprice.html",
+              "icon": "fa fa-snowflake-o",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "发票审核管理",
+          "href": "",
+          "icon": "fa fa-calendar",
+          "target": "_self",
+          "child": [
+            {
+              "title": "审核发票管理",
+              "href": "page/审核发票管理/审核发票管理.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "审核增票资质管理",
+              "href": "page/审核发票管理/审核增票资质管理.html",
+              "icon": "fa fa-navicon",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "问题管理",
+          "href": "",
+          "icon": "fa fa-calendar",
+          "target": "_self",
+          "child": [
+            {
+              "title": "问题处理记录",
+              "href": "page/问题管理/Problem_handling_record.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "用户建议记录",
+              "href": "page/问题管理/User_suggestions.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            },
+            {
+              "title": "问题投诉记录",
+              "href": "page/问题管理/Complaint_record.html",
+              "icon": "fa fa-file-text",
+              "target": "_self"
+            }
+           
+          ]
+        },
+        {
+          "title": "缴费客户",
+          "href": "",
+          "icon": "fa fa-snowflake-o",
+          "target": "",
+          "child": [
+            {
+              "title": "缴费企业客户",
+              "href": "page/缴费客户/enterprise.html",
+              "icon": "fa fa-snowflake-o",
+              "target": "_self"
+            },
+            {
+              "title": "缴费个人客户",
+              "href": "page/缴费客户/personal.html",
+              "icon": "fa fa-snowflake-o",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "收费统计",
+          "href": "",
+          "icon": "fa fa-snowflake-o",
+          "target": "",
+          "child": [
+            {
+              "title": "时间利润统计",
+              "href": "page/收费统计/time-profit.html",
+              "icon": "fa fa-snowflake-o",
+              "target": "_self"
+            },
+            {
+              "title": "产品收费情况统计",
+              "href": "page/收费统计/product-fees.html",
+              "icon": "fa fa-shield",
+              "target": "_self"
+            },
+            {
+              "title": "产品类型收费统计",
+              "href": "page/收费统计/product-type.html",
+              "icon": "fa fa-shield",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
